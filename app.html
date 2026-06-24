@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Forvoxa AI | Ruang Aman untuk Bercerita</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --bg-main: #0c0c0c;
+            --bg-chat: #151515;
+            --accent: #a35d3b; /* Warna Tembaga Forvoxa */
+            --bg-ai-msg: #132b35; /* Warna Biru Gelap Teal */
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(12, 12, 12, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 10;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        
+        .back-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .ai-info h1 { font-size: 1rem; font-weight: 600; margin: 0; color: var(--text-light); }
+        .ai-info p { font-size: 0.7rem; color: var(--accent); margin: 0; }
+
+        /* --- CHAT AREA --- */
+        .chat-container {
+            flex: 1;
+            padding: 20px 5%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: var(--bg-chat);
+            scroll-behavior: smooth;
+        }
+
+        /* Hilangkan scrollbar default untuk tampilan bersih */
+        .chat-container::-webkit-scrollbar { width: 5px; }
+        .chat-container::-webkit-scrollbar-track { background: transparent; }
+        .chat-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+        /* Message Bubbles */
+        .msg-wrapper { display: flex; flex-direction: column; max-width: 85%; }
+        .msg-wrapper.ai { align-self: flex-start; }
+        .msg-wrapper.user { align-self: flex-end; }
+
+        .msg-bubble {
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .ai .msg-bubble {
+            background-color: var(--bg-ai-msg);
+            color: var(--text-light);
+            border-bottom-left-radius: 4px;
+        }
+
+        .user .msg-bubble {
+            background-color: var(--accent);
+            color: var(--text-light);
+            border-bottom-right-radius: 4px;
+        }
+
+        .time { font-size: 0.65rem; color: #666; margin-top: 5px; }
+        .ai .time { align-self: flex-start; margin-left: 5px; }
+        .user .time { align-self: flex-end; margin-right: 5px; }
+
+        /* --- INPUT AREA --- */
+        .input-area {
+            padding: 15px 5%;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        textarea {
+            flex: 1;
+            background: #222;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            resize: none;
+            outline: none;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        textarea::placeholder { color: #777; }
+
+        .send-btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .send-btn:hover { background: #8e4e30; }
+        .send-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.65rem;
+            color: #555;
+        }
+
+        /* Animasi mengetik AI */
+        .typing-indicator { display: none; gap: 4px; padding: 15px 20px; background: var(--bg-ai-msg); border-radius: 18px; border-bottom-left-radius: 4px; align-self: flex-start; width: fit-content; }
+        .dot { width: 6px; height: 6px; background: #aaa; border-radius: 50%; animation: blink 1.4s infinite both; }
+        .dot:nth-child(1) { animation-delay: 0.2s; }
+        .dot:nth-child(2) { animation-delay: 0.4s; }
+        .dot:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="back-btn">←</a>
+            <div class="ai-info">
+                <h1>Forvoxa AI</h1>
+                <p>Ruang aman untuk bercerita 🤍</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHAT AREA -->
+    <div class="chat-container" id="chat-box">
+        
+        <!-- Pesan Pembuka AI -->
+        <div class="msg-wrapper ai">
+            <div class="msg-bubble">
+                Hai… aku di sini 🤍<br><br>
+                Kalau kamu butuh tempat cerita, kamu boleh mulai kapan aja.<br><br>
+                Nggak harus kuat… pelan-pelan aja.
+            </div>
+            <span class="time">Sekarang</span>
+        </div>
+
+        <!-- Indikator AI sedang mengetik (Sembunyi by default) -->
+        <div class="typing-indicator" id="typing-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- INPUT AREA -->
+    <div class="input-area">
+        <div class="input-wrapper">
+            <textarea id="user-input" rows="1" placeholder="Ceritakan perasaanmu di sini..." oninput="autoResize(this)"></textarea>
+            <button class="send-btn" onclick="sendMessage()">
+                <!-- Icon Send -->
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+            </button>
+        </div>
+        <div class="disclaimer">
+            Aku AI 🤍 ruang yang dirancang dengan pendekatan Forvoxa.<br>Bukan pengganti terapi profesional.
+        </div>
+    </div>
+
+<script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        // BUKU CATATAN AI: Menyimpan riwayat obrolan
+        let chatHistory = [];
+
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        userInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        async function sendMessage() {
+            const text = userInput.value.trim();
+            if (text === "") return;
+
+            // 1. Tampilkan pesan User ke layar
+            addMessage(text, 'user');
+            
+            // 2. Simpan pesan User ke Buku Catatan
+            chatHistory.push({ role: "user", content: text });
+            
+            userInput.value = "";
+            userInput.style.height = 'auto'; 
+
+            typingIndicator.style.display = 'flex';
+            chatBox.appendChild(typingIndicator); 
+            scrollToBottom();
+
+            // PASTIKAN URL VERCEL INI BENAR
+            const workerURL = "https://forvoxa-ai-backend.vercel.app/api/chat";
+
+            try {
+                // Mengirim SELURUH RIWAYAT ke Vercel
+                const response = await fetch(workerURL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ messages: chatHistory })
+                });
+
+                const data = await response.json();
+                typingIndicator.style.display = 'none';
+                
+                if (data.reply) {
+                    // Simpan balasan AI ke Buku Catatan
+                    chatHistory.push({ role: "assistant", content: data.reply });
+                    
+                    // Tampilkan balasan AI ke layar (ubah enter \n jadi <br> agar rapi)
+                    let formattedReply = data.reply.replace(/\n/g, "<br>");
+                    addMessage(formattedReply, 'ai');
+                } else {
+                    addMessage("Maaf, sepertinya ada sedikit kendala sistem. 🤍", 'ai');
+                }
+
+            } catch (error) {
+                typingIndicator.style.display = 'none';
+                addMessage("Maaf, koneksi sedang tidak stabil. Coba lagi ya 🤍", 'ai');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('msg-wrapper', sender);
+
+            const bubble = document.createElement('div');
+            bubble.classList.add('msg-bubble');
+            bubble.innerHTML = text; 
+
+            const time = document.createElement('span');
+            time.classList.add('time');
+            const now = new Date();
+            time.innerText = now.getHours() + ":" + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+
+            wrapper.appendChild(bubble);
+            wrapper.appendChild(time);
+            chatBox.appendChild(wrapper);
+            
+            chatBox.appendChild(typingIndicator);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
