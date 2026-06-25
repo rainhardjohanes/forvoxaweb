@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- HEADER & NAVIGATION (FIXED FOR MOBILE) --- */
 /* --- HEADER & NAVIGATION (FREEZE PANEL / FIXED) --- */
         header {
             display: flex;
@@ -71,6 +70,7 @@
             border-radius: 3px;
             font-weight: 600;
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         .btn-ai:hover { background: #8e4e30; }
@@ -80,7 +80,28 @@
             padding-left: 20px;
             margin-left: 5px;
             display: flex;
+            align-items: center;
             gap: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* --- ANIMASI & HINT SWIPE MENU --- */
+        .swipe-hint {
+            display: none;
+            font-size: 10px;
+            color: var(--accent);
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-top: -5px;
+            margin-bottom: 5px;
+            align-self: flex-end;
+            animation: pulseHint 2s infinite;
+        }
+        @keyframes pulseHint {
+            0% { opacity: 0.5; transform: translateX(0); }
+            50% { opacity: 1; transform: translateX(5px); }
+            100% { opacity: 0.5; transform: translateX(0); }
         }
 
         /* --- GLOBAL COMPONENTS --- */
@@ -101,8 +122,25 @@
             font-size: 12px;
             letter-spacing: 2px;
             transition: all 0.3s;
+            white-space: nowrap;
         }
         .btn-outline:hover { background: var(--text-light); color: var(--bg-main); }
+        
+        .btn-filled {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .btn-filled:hover { background: #fff; color: var(--bg-main); }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -190,46 +228,26 @@
         .footer-links a:hover { color: var(--text-light); }
         .copyright { text-align: center; color: #555; font-size: 0.75rem; padding-top: 20px; border-top: 1px solid var(--border-color); }
 
-        /* --- RESPONSIVE FIX (DIJAMIN RAPI DI HP) --- */
-/* --- ANIMASI & HINT SWIPE MENU --- */
-        .swipe-hint {
-            display: none;
-            font-size: 10px;
-            color: var(--accent);
-            letter-spacing: 1px;
-            font-weight: 600;
-            margin-top: -5px;
-            margin-bottom: 5px;
-            align-self: flex-end;
-            animation: pulseHint 2s infinite;
-        }
-        @keyframes pulseHint {
-            0% { opacity: 0.5; transform: translateX(0); }
-            50% { opacity: 1; transform: translateX(5px); }
-            100% { opacity: 0.5; transform: translateX(0); }
-        }
-
         /* --- RESPONSIVE FIX (DIJAMIN RAPI & UX JELAS DI HP) --- */
         @media (max-width: 900px) {
             header { 
                 padding: 15px 5%; 
                 flex-direction: column; 
                 gap: 10px; 
-                align-items: flex-start; /* Rata kiri agar terlihat seperti list panjang */
+                align-items: flex-start;
             }
             .swipe-hint {
-                display: block; /* Memunculkan tulisan "Swipe" di HP */
+                display: block;
             }
             nav { 
                 width: 100%;
                 overflow-x: auto; 
                 justify-content: flex-start;
                 padding-bottom: 8px;
-                /* Memunculkan scrollbar tipis di Firefox */
                 scrollbar-width: thin;
                 scrollbar-color: var(--accent) transparent;
+                -webkit-overflow-scrolling: touch;
             }
-            /* Styling scrollbar elegan untuk Chrome/Safari */
             nav::-webkit-scrollbar { display: block; height: 3px; }
             nav::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
             nav::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
@@ -239,19 +257,19 @@
             .focus-box { padding: 30px; }
             .legacy-header h2 { font-size: 2rem; }
         }
-        
-        </style>
+    </style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION (ENGLISH) -->
+    <!-- HEADER / NAVIGATION -->
+<!-- HEADER / NAVIGATION (INDONESIAN) -->
     <header>
         <a href="#" class="logo">
             <img src="https://forvoxa.com/wp-content/uploads/2025/08/Logo-Forvoxa-White-1024x312.webp" alt="Forvoxa Logo">
         </a>
         
         <!-- Tulisan Petunjuk (Hanya muncul di HP) -->
-        <div class="swipe-hint">Swipe menu ➔</div>
+        <div class="swipe-hint">Geser menu ➔</div>
         
         <nav>
             <a href="#home" class="active">Home</a>
@@ -260,14 +278,15 @@
             <a href="#legacy">Legacy Experience</a>
             <a href="#contact">Contact Us</a>
             
-            <!-- Language Switcher - EN yang menyala -->
+            <!-- Language Switcher - ID yang menyala -->
             <div class="lang-switch">
-                <a href="id.html">ID</a> 
+                <a href="id.html" style="color: #ffffff; font-weight: 700;">ID</a> 
                 <span style="color: #555;">|</span> 
-                <a href="index.html" style="color: #ffffff; font-weight: 700;">EN</a>
+                <a href="index.html">EN</a>
             </div>
         </nav>
     </header>
+
     
     <!-- HERO SECTION -->
     <section id="home" class="hero">
@@ -275,7 +294,7 @@
             <h1>USING CREATIVITY TO SPREAD POSITIVITY AND DO GOOD</h1>
             <p>We transform music, visuals, and storytelling into healing, growth, and meaningful impact for communities.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-filled" style="background: transparent; border-color: #fff; color: #fff;">Join Now</a>
+                <a href="#contact" class="btn-filled">Join Now</a>
                 <a href="#legacy" class="btn-outline" style="border-color: rgba(255,255,255,0.3);">Legacy Experience</a>
             </div>
         </div>
@@ -392,151 +411,151 @@
         </div>
     </section>
 
-    <!-- SALES PAGE: FORVOXA LEGACY EXPERIENCE (ENGLISH) -->
+    <!-- SALES PAGE: FORVOXA LEGACY EXPERIENCE (INDONESIAN) -->
     <section id="legacy" class="legacy-section">
         <div class="legacy-container">
             <div class="legacy-header">
                 <h2>FORVOXA LEGACY EXPERIENCE™</h2>
-                <h3>Transform Your Life Story Into a Meaningful and Timeless Masterpiece</h3>
+                <h3>Ubah Kisah Hidup Anda Menjadi Sebuah Karya yang Bermakna dan Abadi</h3>
             </div>
             
             <div class="legacy-content">
-                <p>Someday, photos might just be kept in an album.</p>
-                <p>Videos might be stored away in a folder.</p>
-                <p>But the stories behind them often slowly fade away.</p>
-                <p>Stories of life-changing decisions. Stories of struggles that few people see. Stories of prayers once whispered.</p>
-                <p>Of failures that taught resilience. Of love that isn't always spoken. Of life lessons you hope your loved ones will one day understand.</p>
-                <p>At Forvoxa, we believe that every life holds a precious story. Not because someone's life is perfect. But because every journey holds meaning. And that meaning is worth passing down.</p>
-                <p>Through the Forvoxa Legacy Experience™, we help transform meaningful life experiences into original songs, visual storytelling, deep conversations, and a Legacy Book that will live on with your loved ones, both today and in the future.</p>
-                <p>This is not just a music project. This is a legacy project. A masterpiece born from your life's journey. A way to preserve a story from being lost.</p>
+                <p>Suatu hari nanti, foto mungkin akan tersimpan di album.</p>
+                <p>Video mungkin akan tersimpan di folder.</p>
+                <p>Namun cerita di balik semuanya sering kali perlahan terlupakan.</p>
+                <p>Cerita tentang keputusan-keputusan yang mengubah hidup. Cerita tentang perjuangan yang tidak banyak orang lihat. Cerita tentang doa-doa yang pernah dipanjatkan.</p>
+                <p>Tentang kegagalan yang mengajarkan ketangguhan. Tentang kasih yang tidak selalu terucap. Tentang pelajaran hidup yang Anda harap suatu hari dapat dipahami oleh orang-orang yang Anda cintai.</p>
+                <p>Di Forvoxa, kami percaya bahwa setiap kehidupan menyimpan kisah yang berharga. Bukan karena hidup seseorang sempurna. Tetapi karena setiap perjalanan mengandung makna. Dan makna itulah yang layak diwariskan.</p>
+                <p>Melalui Forvoxa Legacy Experience™, kami membantu mengubah pengalaman hidup yang bermakna menjadi lagu original, visual storytelling, percakapan yang mendalam, dan sebuah Buku Warisan yang dapat terus hidup bersama orang-orang yang Anda cintai, baik hari ini maupun di masa yang akan datang.</p>
+                <p>Ini bukan sekadar proyek musik. Ini adalah proyek warisan. Sebuah karya yang lahir dari perjalanan hidup Anda. Sebuah cara untuk menjaga sebuah cerita agar tidak hilang.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Imagine This</h4>
-                <p>Imagine one day your children listening to a song inspired by your life's journey.</p>
-                <p>Not just hearing the music. But understanding the heart behind it. Understanding what you fought for. What you learned. What you believed in. And what you wanted to leave behind for them.</p>
-                <p>Imagine when they face challenges in life, they can return to listen to your story.</p>
-                <p>Not because you have all the answers. But because you lived a real life. With real challenges. With real fears. With real hope.</p>
-                <p>And perhaps, through that story, they find the strength to keep moving forward.</p>
-                <p>Because sometimes the greatest legacy we leave behind is not what we own. It is what we learned. Who we loved. And how we lived our lives.</p>
+                <h4>Bayangkan Ini</h4>
+                <p>Bayangkan suatu hari anak-anak Anda mendengarkan sebuah lagu yang terinspirasi dari perjalanan hidup Anda.</p>
+                <p>Bukan hanya mendengar musiknya. Tetapi memahami hati di baliknya. Memahami apa yang Anda perjuangkan. Apa yang Anda pelajari. Apa yang Anda yakini. Dan apa yang ingin Anda wariskan kepada mereka.</p>
+                <p>Bayangkan ketika mereka menghadapi tantangan dalam hidup, mereka dapat kembali mendengarkan cerita Anda.</p>
+                <p>Bukan karena Anda memiliki semua jawaban. Tetapi karena Anda pernah menjalani kehidupan yang nyata. Dengan tantangan yang nyata. Dengan ketakutan yang nyata. Dengan harapan yang nyata.</p>
+                <p>Dan mungkin, melalui cerita itu, mereka menemukan kekuatan untuk terus melangkah.</p>
+                <p>Karena terkadang warisan terbesar yang kita tinggalkan bukanlah apa yang kita miliki. Melainkan apa yang kita pelajari. Siapa yang kita kasihi. Dan bagaimana kita menjalani hidup kita.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>More Than Just a Story</h4>
-                <p>The Forvoxa Legacy Experience™ is not just about documenting the past. It’s about discovering the meaning behind your life's journey and transforming it into something that will live on.</p>
-                <p>Everyone has a story. Some are full of joy. Some are full of challenges. Some may have never truly been told to anyone.</p>
-                <p>But often, it is within those very experiences that the most valuable lessons reside. About love. About loss. About forgiveness. About the courage to rise again. About faith when things don't go as expected. About how someone still chooses to walk forward even when the path isn't easy.</p>
-                <p>When these stories are shared, they have the power to strengthen others. To make someone feel less alone. To give hope. To remind us that a meaningful life is not a perfect life. It is a life lived wholeheartedly.</p>
-                <p>Through music, stories, and meaningful conversations, we help transform your life experiences into a masterpiece that will continue to inspire the people you love. Not just as a memory. But as a message. Not just as a story. But as a legacy.</p>
+                <h4>Lebih Dari Sekadar Cerita</h4>
+                <p>Forvoxa Legacy Experience™ bukan hanya tentang mendokumentasikan masa lalu. Ini tentang menemukan makna di balik perjalanan hidup Anda dan mengubahnya menjadi sesuatu yang dapat terus hidup.</p>
+                <p>Setiap orang memiliki cerita. Sebagian penuh sukacita. Sebagian penuh tantangan. Sebagian mungkin tidak pernah benar-benar diceritakan kepada siapa pun.</p>
+                <p>Namun sering kali, justru di dalam pengalaman-pengalaman itulah terdapat pelajaran yang paling berharga. Tentang cinta. Tentang kehilangan. Tentang pengampunan. Tentang keberanian untuk bangkit kembali. Tentang iman ketika keadaan tidak berjalan sesuai harapan. Tentang bagaimana seseorang tetap memilih untuk melangkah meskipun jalannya tidak mudah.</p>
+                <p>Ketika cerita-cerita tersebut dibagikan, mereka memiliki kekuatan untuk menguatkan orang lain. Untuk membuat seseorang merasa tidak sendirian. Untuk memberi harapan. Untuk mengingatkan bahwa hidup yang bermakna bukanlah hidup yang sempurna. Melainkan hidup yang dijalani dengan sepenuh hati.</p>
+                <p>Melalui musik, cerita, dan percakapan yang bermakna, kami membantu mengubah pengalaman hidup Anda menjadi sebuah karya yang dapat terus menginspirasi orang-orang yang Anda cintai. Bukan hanya sebagai kenangan. Tetapi sebagai pesan. Bukan hanya sebagai cerita. Tetapi sebagai warisan.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Who Is This Program For?</h4>
-                <p>The Forvoxa Legacy Experience™ is designed for individuals, couples, parents, families, leaders, business founders, and anyone who has a meaningful story they want to share.</p>
-                <p>You don't have to be a singer. You don't have to have musical experience. You don't need to have an extraordinary story. You just need to have a story that matters to you.</p>
-                <p>Because often, the most touching stories are not about massive achievements. They are stories about real life. About struggles. About love. About family. About hope. About being human.</p>
-                <p>Some clients choose to sing their own songs. Some choose to participate in the creative process. Others choose to share their story and entrust professional singers to perform the song. Whatever the choice, the story remains yours.</p>
+                <h4>Untuk Siapa Program Ini?</h4>
+                <p>Forvoxa Legacy Experience™ dirancang untuk individu, pasangan, orang tua, keluarga, pemimpin, pendiri bisnis, maupun siapa saja yang memiliki kisah bermakna yang ingin mereka bagikan.</p>
+                <p>Anda tidak harus menjadi penyanyi. Anda tidak harus memiliki pengalaman bermusik. Anda tidak harus memiliki kisah yang luar biasa. Anda hanya perlu memiliki sebuah cerita yang berarti bagi Anda.</p>
+                <p>Karena sering kali, cerita yang paling menyentuh bukanlah cerita tentang pencapaian besar. Melainkan cerita tentang kehidupan yang nyata. Tentang perjuangan. Tentang cinta. Tentang keluarga. Tentang harapan. Tentang menjadi manusia.</p>
+                <p>Sebagian klien memilih untuk menyanyikan lagunya sendiri. Sebagian memilih untuk berpartisipasi dalam proses kreatif. Sebagian lainnya memilih untuk membagikan kisah mereka dan mempercayakan penyanyi profesional untuk membawakan lagu tersebut. Apa pun pilihannya, kisah itu tetap milik Anda.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>What Will You Get?</h4>
+                <h4>Apa Yang Akan Anda Dapatkan?</h4>
                 <div class="legacy-list">
-                    <strong>Two Original Songs</strong>
-                    <p>Two songs professionally written and produced based on your life experiences, values, message, and personal journey. Each song is created specifically and exclusively for you. No templates. No identical songs. Because no two lives have the same story.</p>
+                    <strong>Dua Lagu Original</strong>
+                    <p>Dua lagu yang ditulis dan diproduksi secara profesional berdasarkan pengalaman hidup, nilai, pesan, dan perjalanan pribadi Anda. Setiap lagu dibuat secara khusus dan eksklusif untuk Anda. Tidak ada template. Tidak ada lagu yang sama. Karena tidak ada dua kehidupan yang memiliki cerita yang sama.</p>
                     
-                    <strong>Collaborative Songwriting Process</strong>
-                    <p>We take the time to listen. To understand. To dig into the moments that mean the most in your life. Together, we will discover the story you want to share and transform it into an authentic musical piece.</p>
+                    <strong>Proses Penulisan Lagu Bersama</strong>
+                    <p>Kami meluangkan waktu untuk mendengarkan. Untuk memahami. Untuk menggali momen-momen yang paling berarti dalam hidup Anda. Bersama-sama, kita akan menemukan cerita yang ingin Anda bagikan dan mengubahnya menjadi sebuah karya musik yang autentik.</p>
                     
-                    <strong>Professional Music Production</strong>
-                    <p>Arrangement. Recording. Production. Mixing. Mastering. Handled professionally by our creative team.</p>
+                    <strong>Produksi Musik Profesional</strong>
+                    <p>Aransemen. Rekaman. Produksi. Mixing. Mastering. Dikerjakan secara profesional oleh tim kreatif kami.</p>
                     
-                    <strong>Music Video Production</strong>
-                    <p>A professional music video that helps bring your story to life in a meaningful visual format.</p>
+                    <strong>Produksi Music Video</strong>
+                    <p>Sebuah video musik profesional yang membantu menghadirkan cerita Anda dalam bentuk visual yang bermakna.</p>
                     
                     <strong>Podcast Feature</strong>
-                    <p>A dedicated podcast session to share the story, meaning, values, and life lessons behind the created song. Because sometimes the story behind a song is just as precious as the song itself.</p>
+                    <p>Sesi podcast khusus untuk membagikan kisah, makna, nilai, dan pelajaran hidup di balik lagu yang diciptakan. Karena terkadang cerita di balik sebuah lagu sama berharganya dengan lagu itu sendiri.</p>
                     
-                    <strong>Legacy Book</strong>
-                    <p>A digital Legacy Book designed to summarize key moments, reflections, values, and life lessons from your journey. This book typically consists of 30–50 pages and serves as a companion to the song and podcast. For clients who wish to expand their story into a full book, advanced development options are available separately.</p>
+                    <strong>Buku Warisan</strong>
+                    <p>Sebuah Buku Warisan digital yang dirancang untuk merangkum momen-momen penting, refleksi, nilai-nilai, dan pelajaran hidup dari perjalanan Anda. Buku ini biasanya terdiri dari sekitar 30–50 halaman dan menjadi pelengkap dari lagu serta podcast yang diciptakan. Bagi klien yang ingin mengembangkan kisahnya menjadi buku penuh untuk diterbitkan secara digital maupun cetak, opsi pengembangan lanjutan tersedia secara terpisah.</p>
                     
-                    <strong>Global Digital Release</strong>
-                    <p>Your song will be released on various digital platforms such as Spotify, Apple Music, YouTube Music, and other streaming platforms. So that the people you love can access it whenever they need it.</p>
+                    <strong>Rilis Digital Global</strong>
+                    <p>Lagu Anda akan dirilis di berbagai platform digital seperti Spotify, Apple Music, YouTube Music, dan platform streaming lainnya. Sehingga orang-orang yang Anda cintai dapat mengaksesnya kapan pun mereka membutuhkannya.</p>
                     
-                    <strong>A Meaningful Legacy</strong>
-                    <p>A collection of works designed to live on and inspire for years to come.</p>
+                    <strong>Sebuah Warisan Yang Bermakna</strong>
+                    <p>Kumpulan karya yang dirancang untuk terus hidup dan menginspirasi selama bertahun-tahun.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Created by Humans, Not Algorithms</h4>
-                <p>At Forvoxa, we believe some stories deserve a truly personal touch.</p>
-                <p>Every lyric. Every melody. Every conversation. Every creative decision. Crafted by humans who take the time to understand your story.</p>
-                <p>We do not use artificial intelligence for songwriting, music production, vocals, or video creation as part of our core creative process. Because we believe human stories deserve to be treated humanely. And every story deserves genuine attention.</p>
+                <h4>Diciptakan Oleh Manusia, Bukan Algoritma</h4>
+                <p>Di Forvoxa, kami percaya bahwa beberapa kisah layak mendapatkan sentuhan yang benar-benar personal.</p>
+                <p>Setiap lirik. Setiap melodi. Setiap percakapan. Setiap keputusan kreatif. Dikerjakan oleh manusia yang meluangkan waktu untuk memahami kisah Anda.</p>
+                <p>Kami tidak menggunakan kecerdasan buatan untuk penulisan lagu, produksi musik, vokal, maupun pembuatan video sebagai bagian dari proses kreatif utama kami. Karena kami percaya bahwa cerita manusia layak diperlakukan secara manusiawi. Dan setiap kisah layak mendapatkan perhatian yang sungguh-sungguh.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>The Creative Journey</h4>
+                <h4>Perjalanan Kreatif</h4>
                 <div class="legacy-list">
-                    <strong>Stage 1: Getting to Know Your Story</strong>
-                    <p>We listen to your life journey, experiences, values, and the message you want to share.</p>
-                    <strong>Stage 2: Song Creation</strong>
-                    <p>Our team begins developing original songs inspired by your story.</p>
-                    <strong>Stage 3: Production</strong>
-                    <p>The song is recorded, produced, mixed, and mastered professionally.</p>
-                    <strong>Stage 4: Video, Podcast & Legacy Book</strong>
-                    <p>We help present your story through a music video, podcast, and a custom-designed Legacy Book.</p>
-                    <strong>Stage 5: Launch</strong>
-                    <p>Your masterpiece is prepared and released to various digital platforms.</p>
+                    <strong>Tahap 1: Mengenal Kisah Anda</strong>
+                    <p>Kami mendengarkan perjalanan hidup, pengalaman, nilai, dan pesan yang ingin Anda bagikan.</p>
+                    <strong>Tahap 2: Penciptaan Lagu</strong>
+                    <p>Tim kami mulai mengembangkan lagu-lagu original yang terinspirasi dari kisah Anda.</p>
+                    <strong>Tahap 3: Produksi</strong>
+                    <p>Lagu direkam, diproduksi, di-mixing, dan di-mastering secara profesional.</p>
+                    <strong>Tahap 4: Video, Podcast & Buku Warisan</strong>
+                    <p>Kami membantu menghadirkan cerita Anda melalui video musik, podcast, dan Buku Warisan yang dirancang secara khusus.</p>
+                    <strong>Tahap 5: Peluncuran</strong>
+                    <p>Karya Anda dipersiapkan dan dirilis ke berbagai platform digital.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Project Duration</h4>
-                <p>Every story has a different journey. Most projects take about 3 to 6 months from the initial stage to launch.</p>
-                <p>Meaningful work takes time. Attention. Sincerity. And an unhurried process.</p>
+                <h4>Durasi Proyek</h4>
+                <p>Setiap kisah memiliki perjalanan yang berbeda. Sebagian besar proyek membutuhkan waktu sekitar 3 hingga 6 bulan dari tahap awal hingga peluncuran.</p>
+                <p>Karya yang bermakna membutuhkan waktu. Perhatian. Ketulusan. Dan proses yang tidak terburu-buru.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Investment</h4>
+                <h4>Investasi</h4>
                 <div class="legacy-list">
-                    <p style="margin-bottom: 15px; font-weight: 600;">Forvoxa Legacy Experience™ Includes:</p>
-                    <p>✓ Two Original Songs<br>
-                    ✓ Collaborative Songwriting Process<br>
-                    ✓ Professional Music Production<br>
-                    ✓ Music Video Production<br>
+                    <p style="margin-bottom: 15px; font-weight: 600;">Forvoxa Legacy Experience™ Termasuk:</p>
+                    <p>✓ Dua Lagu Original<br>
+                    ✓ Proses Penulisan Lagu Bersama<br>
+                    ✓ Produksi Musik Profesional<br>
+                    ✓ Produksi Music Video<br>
                     ✓ Podcast Feature<br>
-                    ✓ Legacy Book (30–50 Pages)<br>
-                    ✓ Global Digital Distribution<br>
-                    ✓ Creative Guidance Throughout the Process</p>
+                    ✓ Buku Warisan (30–50 Halaman)<br>
+                    ✓ Distribusi Digital Global<br>
+                    ✓ Pendampingan Kreatif Sepanjang Proses</p>
                     
-                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investment Starting From Rp98,000,000</p>
-                    <p style="font-size: 0.9rem; margin-top: 15px;">Every project is unique. The investment value may vary depending on production needs, creative concepts, filming locations, and the desired level of customization. To maintain quality and attention to each project, we only accept a limited number of clients each year.</p>
+                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investasi Mulai Dari Rp98.000.000</p>
+                    <p style="font-size: 0.9rem; margin-top: 15px;">Setiap proyek bersifat unik. Nilai investasi dapat berbeda tergantung pada kebutuhan produksi, konsep kreatif, lokasi pengambilan gambar, dan tingkat kustomisasi yang diinginkan. Untuk menjaga kualitas dan perhatian pada setiap proyek, kami hanya menerima jumlah klien yang terbatas setiap tahunnya.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Is This For You?</h4>
-                <p>The Forvoxa Legacy Experience™ is not for everyone.</p>
-                <p>This program is intended for those who believe stories have meaning. For those who want to leave behind something meaningful. For those who want to pass down more than just memories. For those who want their values, lessons, experiences, and hopes to live on with the people they love.</p>
-                <p>If that is you, we would be honored to help bring your story to life into a masterpiece.</p>
+                <h4>Apakah Ini Untuk Anda?</h4>
+                <p>Forvoxa Legacy Experience™ bukan untuk semua orang.</p>
+                <p>Program ini ditujukan bagi mereka yang percaya bahwa cerita memiliki arti. Bagi mereka yang ingin meninggalkan sesuatu yang bermakna. Bagi mereka yang ingin mewariskan lebih dari sekadar kenangan. Bagi mereka yang ingin nilai-nilai, pelajaran, pengalaman, dan harapan mereka terus hidup bersama orang-orang yang mereka cintai.</p>
+                <p>Jika itu adalah Anda, kami akan merasa terhormat untuk membantu mewujudkan kisah Anda menjadi sebuah karya.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Why We Do It</h4>
-                <p>Forvoxa was born from a simple belief. That every voice matters. Every story matters. And every life has meaning.</p>
-                <p>We believe stories have the power to inspire. To strengthen. To connect. And to leave a lasting impact.</p>
-                <p>Sometimes one story can make someone feel less alone. Sometimes one life lesson can give hope. Sometimes one song can convey something that is hard to express with ordinary words.</p>
-                <p>That is why we do what we do. Because there are stories worth keeping. Stories worth sharing. And stories worth becoming a legacy.</p>
+                <h4>Mengapa Kami Melakukannya?</h4>
+                <p>Forvoxa lahir dari sebuah keyakinan sederhana. Bahwa setiap suara berarti. Setiap cerita berarti. Dan setiap kehidupan memiliki makna.</p>
+                <p>Kami percaya bahwa cerita memiliki kekuatan untuk menginspirasi. Menguatkan. Menghubungkan. Dan meninggalkan dampak yang bertahan lama.</p>
+                <p>Terkadang satu cerita dapat membuat seseorang merasa tidak sendirian. Terkadang satu pelajaran hidup dapat memberi harapan. Terkadang satu lagu dapat menyampaikan sesuatu yang sulit diungkapkan dengan kata-kata biasa.</p>
+                <p>Karena itulah kami melakukan apa yang kami lakukan. Karena ada cerita yang layak dijaga. Ada cerita yang layak dibagikan. Dan ada cerita yang layak menjadi sebuah warisan.</p>
 
                 <div class="legacy-quote">
-                    “Some of the most meaningful lessons in life are often found through the stories we share.”
+                    “Beberapa pelajaran paling bermakna dalam hidup sering kali ditemukan melalui cerita yang kita bagikan.”
                 </div>
                 <div class="legacy-quote-author">
                     Gabriela Pauline<br>
                     <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Founder, Forvoxa</span>
                 </div>
                 
-                <p style="text-align: center; font-weight: 600; margin-top: 40px; color: var(--text-light);">Your Story. Your Song. Your Legacy.<br><span class="text-accent">Because Your Voice Matters.</span></p>
+                <p style="text-align: center; font-weight: 600; margin-top: 40px; color: var(--text-light);">Kisah Anda. Lagu Anda. Warisan Anda.<br><span class="text-accent">Karena Suara Anda Berarti.</span></p>
                 
             </div>
         </div>
