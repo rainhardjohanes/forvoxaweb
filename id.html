@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forvoxa – Using creativity to spread positivity and do good</title>
+    <title>Forvoxa – Menggunakan kreativitas untuk menyebarkan positivitas dan berbuat baik</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
@@ -30,21 +30,21 @@
             scroll-behavior: smooth;
         }
 
-/* --- HEADER & NAVIGATION (FREEZE PANEL / FIXED) --- */
+        /* --- HEADER & NAVIGATION (FREEZE PANEL / FIXED) --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 5%;
             background: rgba(12, 12, 12, 0.98);
-            position: fixed; /* Mengunci menu agar selalu ikut di-scroll */
+            position: fixed; 
             top: 0;
             left: 0;
-            width: 100%; /* Memastikan lebarnya penuh dari kiri ke kanan */
-            z-index: 1000; /* Memastikan menu selalu berada di tumpukan paling atas */
+            width: 100%; 
+            z-index: 1000; 
             border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px); /* Efek kaca buram transparan yang elegan */
-            box-sizing: border-box; /* Mencegah menu meluber ke samping */
+            backdrop-filter: blur(10px); 
+            box-sizing: border-box; 
         }
         .logo img { height: 35px; }
 
@@ -58,22 +58,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
-            white-space: nowrap; /* Mencegah teks menu patah ke bawah */
+            white-space: nowrap; 
         }
 
         nav a:hover, nav a.active { color: var(--text-light); }
-
-        .btn-ai {
-            background: var(--accent);
-            color: #fff !important;
-            padding: 10px 18px;
-            border-radius: 3px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .btn-ai:hover { background: #8e4e30; }
 
         .lang-switch {
             border-left: 1px solid rgba(255,255,255,0.2);
@@ -171,7 +159,13 @@
         /* --- TEAM SECTION --- */
         .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 50px; }
         .team-member { background: var(--bg-card); padding: 30px; border-radius: 4px; border: 1px solid var(--border-color); }
-        .team-member img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; margin-bottom: 20px; filter: grayscale(20%); }
+        .team-member img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 4px; 
+            margin-bottom: 20px; 
+            filter: grayscale(20%); 
+        }
         .team-member h4 { margin-bottom: 5px; font-size: 1.2rem; }
         .team-member .role { color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; }
         .team-member p { font-size: 0.85rem; color: var(--text-muted); }
@@ -206,13 +200,12 @@
         .legacy-list { background: var(--bg-card); padding: 30px; border-radius: 4px; margin: 30px 0; border: 1px solid var(--border-color); }
         .legacy-list strong { color: var(--accent); display: block; font-size: 1.1rem; margin-bottom: 5px; margin-top: 20px; }
         .legacy-list strong:first-child { margin-top: 0; }
-        
-        .legacy-quote { font-size: 1.2rem; font-style: italic; text-align: center; margin: 60px 0 30px 0; color: var(--text-light); }
-        .legacy-quote-author { text-align: center; font-weight: 600; color: var(--accent); text-transform: uppercase; }
 
+        .legacy-content ul { color: #d0d0d0; margin-bottom: 20px; padding-left: 20px; line-height: 1.8; }
+        
         /* --- COMMUNITY BANNER --- */
         .community-banner {
-            background: linear-gradient(rgba(163, 93, 59, 0.85), rgba(163, 93, 59, 0.85)), url('https://forvoxa.com/wp-content/uploads/2025/08/Community-1024x684.webp') center/cover;
+            background: linear-gradient(rgba(163, 93, 59, 0.85), rgba(163, 93, 59, 0.85)), url('forvoxateam.webp') center/cover;
             padding: 80px 40px; text-align: center; border-radius: 4px; margin: 100px 0;
         }
         .community-banner h2 { font-size: 2.2rem; margin-bottom: 25px; }
@@ -261,8 +254,7 @@
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
-<!-- HEADER / NAVIGATION (INDONESIAN) -->
+    <!-- HEADER / NAVIGATION (INDONESIAN) -->
     <header>
         <a href="#" class="logo">
             <img src="https://forvoxa.com/wp-content/uploads/2025/08/Logo-Forvoxa-White-1024x312.webp" alt="Forvoxa Logo">
@@ -272,11 +264,11 @@
         <div class="swipe-hint">Geser menu ➔</div>
         
         <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#activities">Core Activities</a>
+            <a href="#home" class="active">Beranda</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#activities">Aktivitas Utama</a>
             <a href="#legacy">Legacy Experience</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">Hubungi Kami</a>
             
             <!-- Language Switcher - ID yang menyala -->
             <div class="lang-switch">
@@ -291,10 +283,10 @@
     <!-- HERO SECTION -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>USING CREATIVITY TO SPREAD POSITIVITY AND DO GOOD</h1>
-            <p>We transform music, visuals, and storytelling into healing, growth, and meaningful impact for communities.</p>
+            <h1>MENGGUNAKAN KREATIVITAS UNTUK MENYEBARKAN POSITIVITAS DAN BERBUAT BAIK</h1>
+            <p>Kami mengubah musik, visual, dan penceritaan menjadi pemulihan, pertumbuhan, dan dampak bermakna bagi komunitas.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-filled">Join Now</a>
+                <a href="#contact" class="btn-filled" style="background: transparent; border-color: #fff; color: #fff;">Bergabung Sekarang</a>
                 <a href="#legacy" class="btn-outline" style="border-color: rgba(255,255,255,0.3);">Legacy Experience</a>
             </div>
         </div>
@@ -304,22 +296,22 @@
     <section id="about" class="section-padding">
         <div class="container about-grid">
             <div class="about-left">
-                <h2>ABOUT <br><span class="text-accent">FORVOXA</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">Forvoxa is a creative movement dedicated to healing, growth, and giving back. We combine music, creative visuals, and community engagement to inspire change and bring people together.</p>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem;">Our projects are designed to touch hearts, start conversations, and spark action. We believe creativity is not just for entertainment. It is a powerful tool to create hope and transform lives.</p>
-                <img src="https://forvoxa.com/wp-content/uploads/2025/08/Music-Production-6-1024x684.webp" alt="About Image 1">
+                <h2>TENTANG <br><span class="text-accent">FORVOXA</span></h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">Forvoxa adalah gerakan kreatif yang didedikasikan untuk pemulihan, pertumbuhan, dan memberi kembali. Kami menggabungkan musik, visual kreatif, dan keterlibatan komunitas untuk menginspirasi perubahan dan menyatukan orang-orang.</p>
+                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem;">Proyek kami dirancang untuk menyentuh hati, memulai percakapan, dan memicu tindakan. Kami percaya kreativitas bukan hanya untuk hiburan. Ini adalah alat yang kuat untuk menciptakan harapan dan mengubah kehidupan.</p>
+                <img src="forvoxa2.webp" alt="About Image 1">
             </div>
             <div class="about-right">
-                <img src="https://forvoxa.com/wp-content/uploads/2025/08/Community-1024x684.webp" alt="About Image 2">
+                <img src="forvoxateam.webp" alt="About Image 2">
                 
                 <div class="mission-row">
-                    <div class="mission-title"><span class="text-accent">OUR</span><br>MISSION</div>
-                    <div class="mission-desc">Our mission is to use creativity for a good cause by creating music, visuals, and storytelling that inspire healing, encourage growth, and make a meaningful impact for communities in need.</div>
+                    <div class="mission-title"><span class="text-accent">MISI</span><br>KAMI</div>
+                    <div class="mission-desc">Misi kami adalah menggunakan kreativitas untuk tujuan baik dengan menciptakan musik, visual, dan cerita yang menginspirasi pemulihan, mendorong pertumbuhan, dan memberikan dampak bermakna bagi komunitas yang membutuhkan.</div>
                 </div>
 
                 <div class="mission-row">
-                    <div class="mission-title"><span class="text-accent">OUR</span><br>VISION</div>
-                    <div class="mission-desc">We envision a world where creativity is used to uplift people, connect communities, and give hope to those who need it most. Through art and collaboration, we aim to build a supportive and healthy creative environment for everyone.</div>
+                    <div class="mission-title"><span class="text-accent">VISI</span><br>KAMI</div>
+                    <div class="mission-desc">Kami membayangkan sebuah dunia di mana kreativitas digunakan untuk mengangkat orang, menghubungkan komunitas, dan memberikan harapan kepada mereka yang paling membutuhkannya. Melalui seni dan kolaborasi, kami bertujuan untuk membangun lingkungan kreatif yang mendukung dan sehat untuk semua orang.</div>
                 </div>
             </div>
         </div>
@@ -328,37 +320,45 @@
     <!-- TEAM SECTION -->
     <section class="section-padding" style="background: rgba(255,255,255,0.02);">
         <div class="container">
-            <h2>TEAM OF <span class="text-accent">FORVOXA</span></h2>
-            <p style="color: var(--text-muted);">The people behind the stories, music, and impact.</p>
+            <h2>TIM <span class="text-accent">FORVOXA</span></h2>
+            <p style="color: var(--text-muted);">Orang-orang di balik cerita, musik, dan dampak.</p>
             
             <div class="team-grid">
                 <!-- Team 1 -->
                 <div class="team-member">
-                    <img src="https://forvoxa.com/wp-content/uploads/2025/08/Gabriela-Pauline-Deborah-–-Founder-768x1024.webp" alt="Gabriela Pauline">
+                    <img src="gabrielapauline.webp" alt="Gabriela Pauline">
                     <h4>Gabriela Pauline</h4>
                     <span class="role">Founder of Forvoxa</span>
-                    <p>Gabriela Pauline founded Forvoxa with a simple belief: every person has a story worth sharing. What began as a desire to create meaningful conversations has grown into a platform that brings together stories, music, books, and creative projects inspired by real human experiences. Through Forvoxa, Gabriela seeks to explore life’s deeper questions about purpose, relationships, faith, family, and what it means to live a meaningful life.</p>
-                    <p>She believes that some of the most powerful moments happen when people feel safe enough to share their truth, and that sometimes a single story can help someone feel less alone. Because every voice matters. Every story matters. And every life carries meaning.</p>
+                    <p>Gabriela Pauline mendirikan Forvoxa dengan sebuah keyakinan sederhana: setiap orang memiliki kisah yang layak untuk dibagikan.</p>
+                    <p>Mantan pramugari Singapore Airlines ini memegang gelar Bachelor of Business dari Swinburne University of Technology dan gelar International Master of Management dari Universitas Pelita Harapan. Latar belakang profesional, pendidikan, dan pengalamannya sebagai seorang ibu telah membentuk semangatnya untuk memahami manusia, hubungan, dan cerita yang menghubungkan kita.</p>
+                    <p>Apa yang bermula dari keinginan untuk menciptakan percakapan yang bermakna kini telah berkembang menjadi sebuah platform yang menyatukan cerita, musik, buku, dan proyek kreatif yang terinspirasi dari pengalaman manusia yang nyata. Melalui Forvoxa, Gabriela mengeksplorasi pertanyaan-pertanyaan mendalam tentang tujuan, hubungan, iman, keluarga, dan apa artinya menjalani hidup yang bermakna.</p>
+                    <p>Sebagai pembelajar seumur hidup, ia memiliki minat besar pada pertumbuhan pribadi, perilaku manusia, dan koneksi yang bermakna. Ketertarikan ini membawanya untuk lebih jauh mengeksplorasi psikologi terapan dan ilmu saraf (neuroscience), mencari pemahaman yang lebih dalam tentang bagaimana manusia berpikir, merasa, berhubungan, dan berkembang.</p>
+                    <p>Melalui Forvoxa, ia berharap dapat menciptakan karya yang menginspirasi refleksi, mendorong percakapan yang lebih mendalam, dan mengingatkan orang-orang bahwa setiap suara berarti dan setiap cerita membawa makna.</p>
+                    <p>Ia percaya bahwa beberapa momen paling kuat terjadi ketika orang merasa cukup aman untuk membagikan kebenaran mereka, dan bahwa terkadang sebuah cerita dapat membantu seseorang merasa tidak sendirian.</p>
+                    <p style="font-style: italic; font-weight: 500; color: var(--text-light); margin-top: 20px; padding-left: 15px; border-left: 3px solid var(--accent);">
+                        “Beberapa pelajaran paling bermakna dalam hidup sering kali ditemukan dalam cerita yang kita bagikan.”<br>
+                        <span style="font-size: 0.85rem; font-style: normal; color: var(--accent);">— Gabriela Pauline</span>
+                    </p>
                 </div>
                 
                 <!-- Team 2 -->
                 <div class="team-member">
-                    <img src="https://forvoxa.com/wp-content/uploads/2025/08/Hosea-Hanusia-Creative-Music-Director.webp" alt="Hosea Hanusia">
+                    <img src="hoseahanusia.webp" alt="Hosea Hanusia">
                     <h4>Hosea Hanusia</h4>
                     <span class="role">Music Director</span>
-                    <p>Hosea Hanusia is a musician, songwriter, and music director who is deeply passionate about creating music that moves and inspires people. With years of experience in the music industry, he has developed expertise in piano performance, songwriting, music production, arrangement, and audio editing.</p>
-                    <p>At Forvoxa, Hosea helps bring stories to life through music, crafting songs and soundscapes that capture emotion, meaning, and authenticity. His creative vision and dedication to excellence make him an integral part of Forvoxa’s mission to create work of art inspired by real stories.</p>
-                    <p>For Hosea, music is more than a craft. It is a language that connects hearts and tells stories beyond words.</p>
+                    <p>Hosea Hanusia adalah seorang musisi, penulis lagu, dan direktur musik yang memiliki gairah mendalam dalam menciptakan musik yang menggerakkan dan menginspirasi banyak orang. Dengan pengalaman bertahun-tahun di industri musik, ia memiliki keahlian dalam permainan piano, penulisan lagu, produksi musik, aransemen, dan penyuntingan audio.</p>
+                    <p>Di Forvoxa, Hosea membantu menghidupkan cerita melalui musik, meracik lagu dan lanskap suara yang menangkap emosi, makna, dan keaslian. Visi kreatif dan dedikasinya terhadap keunggulan menjadikannya bagian tak terpisahkan dari misi Forvoxa untuk menciptakan karya seni yang terinspirasi dari kisah nyata.</p>
+                    <p>Bagi Hosea, musik lebih dari sekadar keahlian. Musik adalah bahasa yang menghubungkan hati dan menceritakan kisah melampaui kata-kata.</p>
                 </div>
                 
                 <!-- Team 3 -->
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/400x500/111111/444444?text=Fransika+Cika" alt="Fransika Cika">
+                    <img src="cika.jpeg" alt="Fransika Cika">
                     <h4>Fransika Cika</h4>
                     <span class="role">Team Coordinator & Video Editor</span>
-                    <p>Fransika Cika brings a unique combination of creativity, organization, and people skills to the Forvoxa team. With a professional background in hospitality, she developed strong communication, coordination, and problem-solving abilities while working in dynamic and fast-paced environments.</p>
-                    <p>At Forvoxa, Cika serves as both Team Coordinator and Video Editor, helping ensure that projects run smoothly from concept to completion. She plays a key role in coordinating team efforts, managing workflows, and transforming stories into engaging visual content that reflects the heart and mission of Forvoxa.</p>
-                    <p>Passionate about meaningful storytelling and creative expression, Cika is committed to helping bring real stories to life in ways that inspire connection, reflection, and purpose.</p>
+                    <p>Fransika Cika membawa kombinasi unik antara kreativitas, organisasi, dan keterampilan interpersonal ke dalam tim Forvoxa. Dengan latar belakang profesional di bidang perhotelan, ia mengembangkan kemampuan komunikasi, koordinasi, dan pemecahan masalah yang kuat saat bekerja di lingkungan yang dinamis dan serba cepat.</p>
+                    <p>Di Forvoxa, Cika berperan sebagai Koordinator Tim sekaligus Editor Video, membantu memastikan bahwa proyek berjalan lancar dari konsep hingga selesai. Ia memainkan peran kunci dalam mengoordinasikan upaya tim, mengelola alur kerja, dan mengubah cerita menjadi konten visual menarik yang mencerminkan hati dan misi Forvoxa.</p>
+                    <p>Memiliki dedikasi dalam penceritaan yang bermakna dan ekspresi kreatif, Cika berkomitmen untuk membantu menghidupkan kisah nyata dengan cara yang menginspirasi koneksi, refleksi, dan tujuan.</p>
                 </div>
             </div>
         </div>
@@ -368,28 +368,28 @@
     <section id="activities" class="section-padding">
         <div class="container">
             <div class="activities-header">
-                <h2>CORE <span class="text-accent">ACTIVITIES</span></h2>
+                <h2>AKTIVITAS <span class="text-accent">UTAMA</span></h2>
             </div>
             <div class="activities-grid">
                 <div class="activity-item">
                     <div class="activity-icon">🎵</div>
-                    <h4>MUSIC PRODUCTION</h4>
-                    <p>We create and produce soul-lifting music that carries messages of hope and healing.</p>
+                    <h4>PRODUKSI MUSIK</h4>
+                    <p>Kami menciptakan dan memproduksi musik yang mengangkat jiwa dan membawa pesan harapan serta pemulihan.</p>
                 </div>
                 <div class="activity-item">
                     <div class="activity-icon">🎥</div>
-                    <h4>CREATIVE VISUALS</h4>
-                    <p>We produce videos, photography, and short films inspired by real stories from our community.</p>
+                    <h4>VISUAL KREATIF</h4>
+                    <p>Kami memproduksi video, fotografi, dan film pendek yang terinspirasi dari kisah nyata komunitas kami.</p>
                 </div>
                 <div class="activity-item">
                     <div class="activity-icon">🤝</div>
-                    <h4>COMMUNITY</h4>
-                    <p>We provide a safe, supportive space for creatives to connect, grow, and collaborate.</p>
+                    <h4>KOMUNITAS</h4>
+                    <p>Kami menyediakan ruang yang aman dan mendukung bagi para kreator untuk terhubung, tumbuh, dan berkolaborasi.</p>
                 </div>
                 <div class="activity-item">
                     <div class="activity-icon">❤️</div>
-                    <h4>GIVING BACK</h4>
-                    <p>We turn creative projects into real help through donations, outreach, and impact programs.</p>
+                    <h4>MEMBERI KEMBALI</h4>
+                    <p>Kami mengubah proyek kreatif menjadi bantuan nyata melalui donasi, penjangkauan, dan program berdampak.</p>
                 </div>
             </div>
         </div>
@@ -400,12 +400,27 @@
         <div class="container">
             <div class="focus-box">
                 <div class="focus-left">
-                    <h2>LATEST<br><span class="text-accent">FOCUS</span></h2>
+                    <h2>FOKUS<br><span class="text-accent">TERBARU</span></h2>
                 </div>
                 <div class="focus-right">
-                    <p><strong>August and September Theme: ‘Kasih Bapa’ (Father's Love).</strong></p>
-                    <p>Forvoxa’s current focus is raising awareness about the importance of a father figure. Through community stories, music projects, and creative visuals, we aim to spark meaningful conversations and inspire change.</p>
-                    <p>Every month, we feature a theme that guides our creative work and invites people to share their voices.</p>
+                    <h3 style="color: var(--text-light); margin-bottom: 5px; text-transform: none; font-size: 2rem;">Miliki Makna</h3>
+                    <p style="font-size: 1.05rem; color: var(--accent); font-weight: 500; margin-bottom: 25px;">Sebuah lagu bermakna yang diciptakan untuk mengingatkan dunia bahwa setiap kehidupan memiliki arti.</p>
+
+                    <p>Fokus terbaru kami adalah <strong>“Miliki Makna,”</strong> sebuah lagu orisinal yang diproduksi oleh Forvoxa berkolaborasi dengan <strong>Yayasan Elsafan</strong>, sebuah yayasan dan komunitas untuk teman-teman tunanetra.</p>
+
+                    <p>Proyek ini mencerminkan salah satu keyakinan terdalam Forvoxa: bahwa setiap orang memiliki nilai bawaan, tujuan, dan kisah yang layak untuk didengarkan. Melalui musik, kami berharap dapat memberi semangat tidak hanya bagi teman-teman tunanetra, tetapi juga bagi siapa saja yang pernah meragukan nilai atau tujuan hidupnya.</p>
+
+                    <p>Sejak dirilis di platform musik digital, Miliki Makna telah menyentuh banyak kehidupan dengan membawa pesan yang sederhana namun kuat:<br>
+                    <span style="color: var(--text-light); font-weight: 600; font-size: 1.1rem;">Hidup Anda memiliki makna.</span></p>
+
+                    <p>Proyek ini adalah bagian dari komitmen berkelanjutan Forvoxa untuk menciptakan musik yang bermakna dan kisah-kisah autentik yang menginspirasi harapan, merayakan martabat manusia, dan memberikan dampak positif di dalam komunitas kita.</p>
+
+                    <p style="font-weight: 600; color: var(--text-light); margin-top: 20px;">Karena setiap suara berarti.<br>Karena setiap kehidupan memiliki makna.</p>
+
+                    <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <p style="margin-bottom: 5px;"><strong style="color: var(--accent);">Dengarkan “Miliki Makna” oleh Elsafan.</strong></p>
+                        <p style="font-size: 0.85rem; margin: 0;">Kini tersedia di Spotify, Apple Music, YouTube Music, YouTube, dan platform musik digital utama lainnya.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -416,146 +431,223 @@
         <div class="legacy-container">
             <div class="legacy-header">
                 <h2>FORVOXA LEGACY EXPERIENCE™</h2>
-                <h3>Ubah Kisah Hidup Anda Menjadi Sebuah Karya yang Bermakna dan Abadi</h3>
+                <h3>Setiap Kisah Layak Diciptakan oleh Manusia, Bukan AI.</h3>
             </div>
             
             <div class="legacy-content">
-                <p>Suatu hari nanti, foto mungkin akan tersimpan di album.</p>
-                <p>Video mungkin akan tersimpan di folder.</p>
-                <p>Namun cerita di balik semuanya sering kali perlahan terlupakan.</p>
-                <p>Cerita tentang keputusan-keputusan yang mengubah hidup. Cerita tentang perjuangan yang tidak banyak orang lihat. Cerita tentang doa-doa yang pernah dipanjatkan.</p>
-                <p>Tentang kegagalan yang mengajarkan ketangguhan. Tentang kasih yang tidak selalu terucap. Tentang pelajaran hidup yang Anda harap suatu hari dapat dipahami oleh orang-orang yang Anda cintai.</p>
-                <p>Di Forvoxa, kami percaya bahwa setiap kehidupan menyimpan kisah yang berharga. Bukan karena hidup seseorang sempurna. Tetapi karena setiap perjalanan mengandung makna. Dan makna itulah yang layak diwariskan.</p>
-                <p>Melalui Forvoxa Legacy Experience™, kami membantu mengubah pengalaman hidup yang bermakna menjadi lagu original, visual storytelling, percakapan yang mendalam, dan sebuah Buku Warisan yang dapat terus hidup bersama orang-orang yang Anda cintai, baik hari ini maupun di masa yang akan datang.</p>
-                <p>Ini bukan sekadar proyek musik. Ini adalah proyek warisan. Sebuah karya yang lahir dari perjalanan hidup Anda. Sebuah cara untuk menjaga sebuah cerita agar tidak hilang.</p>
+                <p>Di era ketika hampir semua hal dapat dibuat oleh AI hanya dalam hitungan menit, kami memilih sesuatu yang berbeda.</p>
+                
+                <p><strong style="font-size: 1.2rem;">Kami memilih manusia.</strong></p>
+                
+                <p>Karena kami percaya, kisah hidup seseorang bukan sekadar informasi yang bisa diproses.</p>
+                
+                <p>Ia adalah kumpulan pengalaman, doa, perjuangan, harapan, cinta, kehilangan, dan pelajaran hidup yang membentuk siapa seseorang sebenarnya.</p>
+                
+                <p>Kisah seperti itu tidak layak diperlakukan seperti sebuah <em>prompt</em>.</p>
+                
+                <p>Ia layak didengarkan.<br>
+                Dipahami.<br>
+                Dan diterjemahkan menjadi sebuah karya dengan hati.</p>
+                
+                <p>Itulah mengapa di Forvoxa, setiap lagu, setiap percakapan, setiap video, dan setiap halaman Legacy Book diciptakan oleh manusia yang sungguh-sungguh meluangkan waktu untuk mengenal kisah Anda.</p>
+                
+                <p>Bukan dibuat oleh AI.<br>
+                Melainkan diciptakan bersama Anda.</p>
+                
+                <p>Karena kami percaya…<br>
+                <strong style="color: var(--text-light);">Every Voice Matters.</strong><br>
+                Dan setiap kehidupan memiliki kisah yang layak dikenang.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Bayangkan Ini</h4>
-                <p>Bayangkan suatu hari anak-anak Anda mendengarkan sebuah lagu yang terinspirasi dari perjalanan hidup Anda.</p>
-                <p>Bukan hanya mendengar musiknya. Tetapi memahami hati di baliknya. Memahami apa yang Anda perjuangkan. Apa yang Anda pelajari. Apa yang Anda yakini. Dan apa yang ingin Anda wariskan kepada mereka.</p>
-                <p>Bayangkan ketika mereka menghadapi tantangan dalam hidup, mereka dapat kembali mendengarkan cerita Anda.</p>
-                <p>Bukan karena Anda memiliki semua jawaban. Tetapi karena Anda pernah menjalani kehidupan yang nyata. Dengan tantangan yang nyata. Dengan ketakutan yang nyata. Dengan harapan yang nyata.</p>
-                <p>Dan mungkin, melalui cerita itu, mereka menemukan kekuatan untuk terus melangkah.</p>
-                <p>Karena terkadang warisan terbesar yang kita tinggalkan bukanlah apa yang kita miliki. Melainkan apa yang kita pelajari. Siapa yang kita kasihi. Dan bagaimana kita menjalani hidup kita.</p>
+                <h4>Bayangkan Ini…</h4>
+                <p>Suatu hari nanti, anak-anak Anda membuka Spotify.</p>
+                <p>Mereka menekan tombol play.</p>
+                <p>Yang mereka dengarkan bukan sekadar sebuah lagu.<br>
+                Melainkan perjalanan hidup Anda.</p>
+                
+                <p>Tentang perjuangan yang mungkin tidak pernah sempat mereka lihat.<br>
+                Tentang doa-doa yang pernah Anda panjatkan.<br>
+                Tentang nilai-nilai yang ingin Anda wariskan.<br>
+                Tentang alasan mengapa Anda terus melangkah, bahkan ketika hidup tidak mudah.</p>
+                
+                <p>Suatu hari nanti, mungkin mereka sedang menghadapi masa yang sulit.</p>
+                
+                <p>Lalu mereka kembali mendengarkan lagu itu.<br>
+                Membaca Legacy Book Anda.<br>
+                Menonton video perjalanan hidup Anda.<br>
+                Mendengar suara Anda melalui podcast.</p>
+                
+                <p>Dan mereka kembali diingatkan…<br>
+                Siapa Anda.<br>
+                Apa yang Anda perjuangkan.<br>
+                Apa yang Anda yakini.</p>
+                
+                <p>Warisan terbesar bukan selalu apa yang kita miliki.<br>
+                Sering kali, warisan terbesar adalah nilai-nilai yang kita tinggalkan.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Lebih Dari Sekadar Cerita</h4>
-                <p>Forvoxa Legacy Experience™ bukan hanya tentang mendokumentasikan masa lalu. Ini tentang menemukan makna di balik perjalanan hidup Anda dan mengubahnya menjadi sesuatu yang dapat terus hidup.</p>
-                <p>Setiap orang memiliki cerita. Sebagian penuh sukacita. Sebagian penuh tantangan. Sebagian mungkin tidak pernah benar-benar diceritakan kepada siapa pun.</p>
-                <p>Namun sering kali, justru di dalam pengalaman-pengalaman itulah terdapat pelajaran yang paling berharga. Tentang cinta. Tentang kehilangan. Tentang pengampunan. Tentang keberanian untuk bangkit kembali. Tentang iman ketika keadaan tidak berjalan sesuai harapan. Tentang bagaimana seseorang tetap memilih untuk melangkah meskipun jalannya tidak mudah.</p>
-                <p>Ketika cerita-cerita tersebut dibagikan, mereka memiliki kekuatan untuk menguatkan orang lain. Untuk membuat seseorang merasa tidak sendirian. Untuk memberi harapan. Untuk mengingatkan bahwa hidup yang bermakna bukanlah hidup yang sempurna. Melainkan hidup yang dijalani dengan sepenuh hati.</p>
-                <p>Melalui musik, cerita, dan percakapan yang bermakna, kami membantu mengubah pengalaman hidup Anda menjadi sebuah karya yang dapat terus menginspirasi orang-orang yang Anda cintai. Bukan hanya sebagai kenangan. Tetapi sebagai pesan. Bukan hanya sebagai cerita. Tetapi sebagai warisan.</p>
+                <h4>Apa Itu Forvoxa Legacy Experience™?</h4>
+                <p>Forvoxa Legacy Experience™ adalah pengalaman kreatif premium yang membantu mengubah kisah hidup Anda menjadi sebuah karya yang dapat terus hidup bersama orang-orang yang Anda cintai.</p>
+                <p>Kami menggabungkan musik, visual storytelling, percakapan yang bermakna, dan tulisan menjadi satu pengalaman yang utuh.</p>
+                <p>Bukan untuk menceritakan bahwa hidup Anda sempurna.<br>
+                Tetapi untuk menunjukkan bahwa setiap perjalanan memiliki makna.</p>
+                <p>Dan makna itulah yang layak diwariskan.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Untuk Siapa Program Ini?</h4>
-                <p>Forvoxa Legacy Experience™ dirancang untuk individu, pasangan, orang tua, keluarga, pemimpin, pendiri bisnis, maupun siapa saja yang memiliki kisah bermakna yang ingin mereka bagikan.</p>
-                <p>Anda tidak harus menjadi penyanyi. Anda tidak harus memiliki pengalaman bermusik. Anda tidak harus memiliki kisah yang luar biasa. Anda hanya perlu memiliki sebuah cerita yang berarti bagi Anda.</p>
-                <p>Karena sering kali, cerita yang paling menyentuh bukanlah cerita tentang pencapaian besar. Melainkan cerita tentang kehidupan yang nyata. Tentang perjuangan. Tentang cinta. Tentang keluarga. Tentang harapan. Tentang menjadi manusia.</p>
-                <p>Sebagian klien memilih untuk menyanyikan lagunya sendiri. Sebagian memilih untuk berpartisipasi dalam proses kreatif. Sebagian lainnya memilih untuk membagikan kisah mereka dan mempercayakan penyanyi profesional untuk membawakan lagu tersebut. Apa pun pilihannya, kisah itu tetap milik Anda.</p>
+                <h4>Mengapa Kami Memilih Manusia, Bukan AI?</h4>
+                <p>AI dapat menghasilkan lagu.<br>
+                Namun AI tidak mengenal Anda.</p>
+                
+                <p>AI tidak mengetahui mengapa sebuah momen membuat Anda menangis.<br>
+                AI tidak memahami bagaimana kehilangan mengubah hidup Anda.<br>
+                AI tidak dapat merasakan syukur yang Anda rasakan ketika doa akhirnya dijawab.</p>
+                
+                <p>Itulah mengapa proses kami selalu dimulai dengan percakapan.</p>
+                
+                <p>Kami mendengarkan.<br>
+                Kami bertanya.<br>
+                Kami memahami.<br>
+                Kami menggali makna di balik setiap cerita.</p>
+                
+                <p>Barulah proses kreatif dimulai.</p>
+                
+                <p>Setiap lirik ditulis oleh penulis lagu.<br>
+                Setiap melodi diciptakan oleh musisi.<br>
+                Setiap aransemen diproduksi oleh tim kreatif profesional.<br>
+                Setiap podcast adalah percakapan yang nyata.<br>
+                Setiap keputusan kreatif dibuat oleh manusia yang benar-benar memahami kisah Anda.</p>
+                
+                <p>Kami percaya AI memiliki tempatnya dalam dunia modern.<br>
+                Namun ketika seseorang mempercayakan kisah hidupnya kepada kami, kami memilih sentuhan manusia.</p>
+                
+                <p>Karena kisah manusia layak diceritakan oleh manusia.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Apa Yang Akan Anda Dapatkan?</h4>
+                <h4>Siapa yang Cocok Mengikuti Program Ini?</h4>
+                <p>Forvoxa Legacy Experience™ dirancang bagi mereka yang ingin meninggalkan sesuatu yang lebih bermakna daripada sekadar kenangan.</p>
+                <p>Program ini cocok untuk:</p>
+                
+                <ul>
+                    <li>Orang tua yang ingin mewariskan nilai hidup kepada anak-anak.</li>
+                    <li>Pasangan yang ingin mengabadikan perjalanan cinta mereka.</li>
+                    <li>Keluarga yang ingin mengenang perjalanan hidup bersama.</li>
+                    <li>Pendiri perusahaan yang ingin meninggalkan kisah di balik visi mereka.</li>
+                    <li>Pemimpin, profesional, maupun siapa saja yang memiliki kisah yang ingin dibagikan.</li>
+                </ul>
+                
+                <p>Anda tidak harus bisa bernyanyi.<br>
+                Anda tidak harus memahami musik.<br>
+                Anda hanya perlu memiliki sebuah kisah yang berarti bagi Anda.</p>
+                
+                <p>Karena sering kali kisah yang paling menyentuh bukanlah kisah yang paling luar biasa.<br>
+                Melainkan kisah yang paling nyata.</p>
+
+                <div class="legacy-divider">⸻</div>
+
+                <h4>Apa yang Akan Anda Dapatkan?</h4>
                 <div class="legacy-list">
                     <strong>Dua Lagu Original</strong>
-                    <p>Dua lagu yang ditulis dan diproduksi secara profesional berdasarkan pengalaman hidup, nilai, pesan, dan perjalanan pribadi Anda. Setiap lagu dibuat secara khusus dan eksklusif untuk Anda. Tidak ada template. Tidak ada lagu yang sama. Karena tidak ada dua kehidupan yang memiliki cerita yang sama.</p>
+                    <p>Dua lagu eksklusif yang ditulis berdasarkan perjalanan hidup, nilai, dan pesan yang ingin Anda tinggalkan.</p>
                     
                     <strong>Proses Penulisan Lagu Bersama</strong>
-                    <p>Kami meluangkan waktu untuk mendengarkan. Untuk memahami. Untuk menggali momen-momen yang paling berarti dalam hidup Anda. Bersama-sama, kita akan menemukan cerita yang ingin Anda bagikan dan mengubahnya menjadi sebuah karya musik yang autentik.</p>
+                    <p>Kami mendengarkan kisah Anda, menggali makna terdalamnya, lalu mengubahnya menjadi karya musik yang benar-benar personal.</p>
                     
                     <strong>Produksi Musik Profesional</strong>
-                    <p>Aransemen. Rekaman. Produksi. Mixing. Mastering. Dikerjakan secara profesional oleh tim kreatif kami.</p>
+                    <p>Aransemen, rekaman, mixing, dan mastering dilakukan oleh tim kreatif profesional Forvoxa.</p>
                     
-                    <strong>Produksi Music Video</strong>
-                    <p>Sebuah video musik profesional yang membantu menghadirkan cerita Anda dalam bentuk visual yang bermakna.</p>
+                    <strong>Music Video</strong>
+                    <p>Visual sinematik yang membantu menghidupkan kisah Anda.</p>
                     
-                    <strong>Podcast Feature</strong>
-                    <p>Sesi podcast khusus untuk membagikan kisah, makna, nilai, dan pelajaran hidup di balik lagu yang diciptakan. Karena terkadang cerita di balik sebuah lagu sama berharganya dengan lagu itu sendiri.</p>
+                    <strong>Podcast</strong>
+                    <p>Percakapan mendalam mengenai perjalanan hidup dan makna di balik lagu-lagu tersebut.</p>
                     
-                    <strong>Buku Warisan</strong>
-                    <p>Sebuah Buku Warisan digital yang dirancang untuk merangkum momen-momen penting, refleksi, nilai-nilai, dan pelajaran hidup dari perjalanan Anda. Buku ini biasanya terdiri dari sekitar 30–50 halaman dan menjadi pelengkap dari lagu serta podcast yang diciptakan. Bagi klien yang ingin mengembangkan kisahnya menjadi buku penuh untuk diterbitkan secara digital maupun cetak, opsi pengembangan lanjutan tersedia secara terpisah.</p>
+                    <strong>Legacy Book</strong>
+                    <p>Buku digital eksklusif sekitar 30–50 halaman yang merangkum kisah, refleksi, nilai hidup, dan pelajaran yang ingin Anda wariskan.<br>
+                    Apabila Anda ingin mengembangkan kisah tersebut menjadi sebuah buku penuh, kami juga menyediakan layanan lanjutan secara terpisah.</p>
                     
-                    <strong>Rilis Digital Global</strong>
-                    <p>Lagu Anda akan dirilis di berbagai platform digital seperti Spotify, Apple Music, YouTube Music, dan platform streaming lainnya. Sehingga orang-orang yang Anda cintai dapat mengaksesnya kapan pun mereka membutuhkannya.</p>
-                    
-                    <strong>Sebuah Warisan Yang Bermakna</strong>
-                    <p>Kumpulan karya yang dirancang untuk terus hidup dan menginspirasi selama bertahun-tahun.</p>
+                    <strong>Rilis Global</strong>
+                    <p>Lagu Anda akan dirilis di Spotify, Apple Music, YouTube Music, dan berbagai platform streaming dunia sehingga dapat dinikmati kapan pun oleh orang-orang yang Anda cintai.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
-
-                <h4>Diciptakan Oleh Manusia, Bukan Algoritma</h4>
-                <p>Di Forvoxa, kami percaya bahwa beberapa kisah layak mendapatkan sentuhan yang benar-benar personal.</p>
-                <p>Setiap lirik. Setiap melodi. Setiap percakapan. Setiap keputusan kreatif. Dikerjakan oleh manusia yang meluangkan waktu untuk memahami kisah Anda.</p>
-                <p>Kami tidak menggunakan kecerdasan buatan untuk penulisan lagu, produksi musik, vokal, maupun pembuatan video sebagai bagian dari proses kreatif utama kami. Karena kami percaya bahwa cerita manusia layak diperlakukan secara manusiawi. Dan setiap kisah layak mendapatkan perhatian yang sungguh-sungguh.</p>
+                
+                <h4>Hasil Akhirnya Bukan Sekadar Lagu.</h4>
+                <p>Pada akhir perjalanan ini Anda akan memiliki:</p>
+                <p>
+                    ✓ Dua lagu original.<br>
+                    ✓ Music video.<br>
+                    ✓ Podcast.<br>
+                    ✓ Legacy Book.<br>
+                    ✓ Karya yang tersedia di berbagai platform musik dunia.
+                </p>
+                <p>Namun lebih dari semua itu…<br>
+                <strong>Anda memiliki sebuah warisan.</strong></p>
+                <p>Sesuatu yang dapat terus didengar.<br>
+                Dibaca.<br>
+                Ditonton.<br>
+                Dan dikenang.<br>
+                Bahkan bertahun-tahun dari sekarang.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Perjalanan Kreatif</h4>
+                <h4>Proses Perjalanan</h4>
                 <div class="legacy-list">
-                    <strong>Tahap 1: Mengenal Kisah Anda</strong>
-                    <p>Kami mendengarkan perjalanan hidup, pengalaman, nilai, dan pesan yang ingin Anda bagikan.</p>
-                    <strong>Tahap 2: Penciptaan Lagu</strong>
-                    <p>Tim kami mulai mengembangkan lagu-lagu original yang terinspirasi dari kisah Anda.</p>
-                    <strong>Tahap 3: Produksi</strong>
-                    <p>Lagu direkam, diproduksi, di-mixing, dan di-mastering secara profesional.</p>
-                    <strong>Tahap 4: Video, Podcast & Buku Warisan</strong>
-                    <p>Kami membantu menghadirkan cerita Anda melalui video musik, podcast, dan Buku Warisan yang dirancang secara khusus.</p>
-                    <strong>Tahap 5: Peluncuran</strong>
-                    <p>Karya Anda dipersiapkan dan dirilis ke berbagai platform digital.</p>
+                    <strong>Tahap 1</strong>
+                    <p>Percakapan mendalam untuk mengenal perjalanan hidup Anda.</p>
+                    <strong>Tahap 2</strong>
+                    <p>Penulisan lagu berdasarkan kisah dan nilai hidup Anda.</p>
+                    <strong>Tahap 3</strong>
+                    <p>Produksi musik profesional.</p>
+                    <strong>Tahap 4</strong>
+                    <p>Produksi music video, podcast, dan Legacy Book.</p>
+                    <strong>Tahap 5</strong>
+                    <p>Peluncuran karya di platform digital.</p>
                 </div>
-
-                <div class="legacy-divider">⸻</div>
-
-                <h4>Durasi Proyek</h4>
-                <p>Setiap kisah memiliki perjalanan yang berbeda. Sebagian besar proyek membutuhkan waktu sekitar 3 hingga 6 bulan dari tahap awal hingga peluncuran.</p>
-                <p>Karya yang bermakna membutuhkan waktu. Perhatian. Ketulusan. Dan proses yang tidak terburu-buru.</p>
+                <p>Durasi pengerjaan umumnya sekitar 3–6 bulan, karena karya yang bermakna membutuhkan waktu, perhatian, dan proses yang tidak terburu-buru.</p>
 
                 <div class="legacy-divider">⸻</div>
 
                 <h4>Investasi</h4>
                 <div class="legacy-list">
-                    <p style="margin-bottom: 15px; font-weight: 600;">Forvoxa Legacy Experience™ Termasuk:</p>
+                    <p style="margin-bottom: 15px; font-weight: 600;">Forvoxa Legacy Experience™ mencakup:</p>
                     <p>✓ Dua Lagu Original<br>
-                    ✓ Proses Penulisan Lagu Bersama<br>
+                    ✓ Collaborative Songwriting<br>
                     ✓ Produksi Musik Profesional<br>
-                    ✓ Produksi Music Video<br>
-                    ✓ Podcast Feature<br>
-                    ✓ Buku Warisan (30–50 Halaman)<br>
-                    ✓ Distribusi Digital Global<br>
-                    ✓ Pendampingan Kreatif Sepanjang Proses</p>
+                    ✓ Music Video<br>
+                    ✓ Podcast<br>
+                    ✓ Legacy Book (30–50 halaman)<br>
+                    ✓ Distribusi Global<br>
+                    ✓ Pendampingan Kreatif Selama Proses</p>
                     
-                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investasi Mulai Dari Rp98.000.000</p>
-                    <p style="font-size: 0.9rem; margin-top: 15px;">Setiap proyek bersifat unik. Nilai investasi dapat berbeda tergantung pada kebutuhan produksi, konsep kreatif, lokasi pengambilan gambar, dan tingkat kustomisasi yang diinginkan. Untuk menjaga kualitas dan perhatian pada setiap proyek, kami hanya menerima jumlah klien yang terbatas setiap tahunnya.</p>
+                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investasi mulai dari Rp98.000.000</p>
+                    <p style="font-size: 0.9rem; margin-top: 15px;">Setiap proyek bersifat personal dan dapat disesuaikan dengan kebutuhan produksi, konsep kreatif, lokasi pengambilan gambar, dan tingkat kustomisasi yang diinginkan.</p>
+                    <p style="font-size: 0.9rem;">Untuk menjaga kualitas dan kedalaman setiap proyek, kami hanya menerima jumlah klien yang terbatas setiap tahunnya.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Apakah Ini Untuk Anda?</h4>
-                <p>Forvoxa Legacy Experience™ bukan untuk semua orang.</p>
-                <p>Program ini ditujukan bagi mereka yang percaya bahwa cerita memiliki arti. Bagi mereka yang ingin meninggalkan sesuatu yang bermakna. Bagi mereka yang ingin mewariskan lebih dari sekadar kenangan. Bagi mereka yang ingin nilai-nilai, pelajaran, pengalaman, dan harapan mereka terus hidup bersama orang-orang yang mereka cintai.</p>
-                <p>Jika itu adalah Anda, kami akan merasa terhormat untuk membantu mewujudkan kisah Anda menjadi sebuah karya.</p>
-
-                <div class="legacy-divider">⸻</div>
-
-                <h4>Mengapa Kami Melakukannya?</h4>
-                <p>Forvoxa lahir dari sebuah keyakinan sederhana. Bahwa setiap suara berarti. Setiap cerita berarti. Dan setiap kehidupan memiliki makna.</p>
-                <p>Kami percaya bahwa cerita memiliki kekuatan untuk menginspirasi. Menguatkan. Menghubungkan. Dan meninggalkan dampak yang bertahan lama.</p>
-                <p>Terkadang satu cerita dapat membuat seseorang merasa tidak sendirian. Terkadang satu pelajaran hidup dapat memberi harapan. Terkadang satu lagu dapat menyampaikan sesuatu yang sulit diungkapkan dengan kata-kata biasa.</p>
-                <p>Karena itulah kami melakukan apa yang kami lakukan. Karena ada cerita yang layak dijaga. Ada cerita yang layak dibagikan. Dan ada cerita yang layak menjadi sebuah warisan.</p>
-
-                <div class="legacy-quote">
-                    “Beberapa pelajaran paling bermakna dalam hidup sering kali ditemukan melalui cerita yang kita bagikan.”
-                </div>
-                <div class="legacy-quote-author">
-                    Gabriela Pauline<br>
-                    <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Founder, Forvoxa</span>
-                </div>
+                <h4>Mengapa Kami Melakukan Ini?</h4>
+                <p>Forvoxa lahir dari sebuah keyakinan sederhana.</p>
+                <p>Bahwa setiap suara memiliki arti.<br>
+                Setiap kisah memiliki nilai.<br>
+                Dan setiap kehidupan memiliki makna.</p>
+                <p>Kami percaya sebuah lagu dapat menghidupkan kembali kenangan.<br>
+                Sebuah percakapan dapat menguatkan seseorang.<br>
+                Dan sebuah kisah dapat mengubah hidup orang lain.</p>
+                <p>Karena itulah kami melakukan semua ini.</p>
+                <p>Bukan sekadar membuat lagu.<br>
+                Tetapi membantu seseorang meninggalkan sesuatu yang akan terus hidup.</p>
                 
-                <p style="text-align: center; font-weight: 600; margin-top: 40px; color: var(--text-light);">Kisah Anda. Lagu Anda. Warisan Anda.<br><span class="text-accent">Karena Suara Anda Berarti.</span></p>
+                <p style="text-align: center; font-weight: 600; margin-top: 60px; color: var(--text-light); font-size: 1.3rem; line-height: 1.8;">
+                    Your Story.<br>
+                    Your Song.<br>
+                    Your Legacy.<br>
+                    <span class="text-accent">Because Your Voice Matters.</span>
+                </p>
                 
             </div>
         </div>
@@ -564,14 +656,14 @@
     <!-- COMMUNITY BANNER -->
     <section id="contact" class="container">
         <div class="community-banner">
-            <h2>JOIN THE FORVOXA<br>COMMUNITY</h2>
-            <p>Whether you are a collaborator with creative skills, a donor with a heart for impact, or someone seeking a supportive creative community, Forvoxa is a place for you.</p>
-            <p>By joining, you become part of a movement that turns art into action and voices into change.</p>
-            <p style="margin: 40px 0 30px 0; font-size: 0.9rem;">Send us a DM on our instagram account to join, collaborate, or share your story</p>
+            <h2>BERGABUNG DENGAN KOMUNITAS<br>FORVOXA</h2>
+            <p>Baik Anda seorang kolaborator dengan keterampilan kreatif, donatur yang memiliki hati untuk berdampak, atau seseorang yang mencari komunitas kreatif yang mendukung, Forvoxa adalah tempat untuk Anda.</p>
+            <p>Dengan bergabung, Anda menjadi bagian dari gerakan yang mengubah seni menjadi tindakan dan suara menjadi perubahan.</p>
+            <p style="margin: 40px 0 30px 0; font-size: 0.9rem;">Kirimkan DM ke akun Instagram kami untuk bergabung, berkolaborasi, atau membagikan kisah Anda</p>
             
             <div>
                 <a href="https://www.instagram.com/forvoxa" target="_blank" class="btn-outline" style="background: #ffffff; color: var(--accent); border-color: #ffffff;">INSTAGRAM</a>
-                <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); margin-left: 15px;">CONTACT US</a>
+                <a href="#" class="btn-outline" style="border-color: rgba(255,255,255,0.3); margin-left: 15px;">HUBUNGI KAMI</a>
             </div>
         </div>
     </section>
@@ -582,18 +674,18 @@
             <div class="footer-grid">
                 <div class="footer-logo">
                     <img src="https://forvoxa.com/wp-content/uploads/2025/08/Logo-Forvoxa-White-1024x312.webp" alt="Forvoxa Logo">
-                    <p>We transform music, visuals, and storytelling into healing, growth, and meaningful impact for communities.</p>
+                    <p>Kami mengubah musik, visual, dan penceritaan menjadi pemulihan, pertumbuhan, dan dampak bermakna bagi komunitas.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>QUICK LINKS</h4>
-                    <a href="#home">Home</a>
-                    <a href="#about">About Us</a>
-                    <a href="#activities">Core Activities</a>
+                    <h4>TAUTAN CEPAT</h4>
+                    <a href="#home">Beranda</a>
+                    <a href="#about">Tentang Kami</a>
+                    <a href="#activities">Aktivitas Utama</a>
                     <a href="#legacy">Legacy Experience</a>
-                    <a href="#contact">Contact Us</a>
+                    <a href="#contact">Hubungi Kami</a>
                 </div>
                 <div class="footer-links">
-                    <h4>CONTACT INFO</h4>
+                    <h4>INFO KONTAK</h4>
                     <a href="https://www.instagram.com/forvoxa">@forvoxa</a>
                     <a href="mailto:forvoxa.production@gmail.com">forvoxa.production@gmail.com</a>
                 </div>

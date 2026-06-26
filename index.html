@@ -68,7 +68,28 @@
             padding-left: 20px;
             margin-left: 5px;
             display: flex;
+            align-items: center;
             gap: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* --- ANIMASI & HINT SWIPE MENU --- */
+        .swipe-hint {
+            display: none;
+            font-size: 10px;
+            color: var(--accent);
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-top: -5px;
+            margin-bottom: 5px;
+            align-self: flex-end;
+            animation: pulseHint 2s infinite;
+        }
+        @keyframes pulseHint {
+            0% { opacity: 0.5; transform: translateX(0); }
+            50% { opacity: 1; transform: translateX(5px); }
+            100% { opacity: 0.5; transform: translateX(0); }
         }
 
         /* --- GLOBAL COMPONENTS --- */
@@ -89,6 +110,7 @@
             font-size: 12px;
             letter-spacing: 2px;
             transition: all 0.3s;
+            white-space: nowrap;
         }
         .btn-outline:hover { background: var(--text-light); color: var(--bg-main); }
         
@@ -144,7 +166,6 @@
             margin-bottom: 20px; 
             filter: grayscale(20%); 
         }
-        
         .team-member h4 { margin-bottom: 5px; font-size: 1.2rem; }
         .team-member .role { color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; }
         .team-member p { font-size: 0.85rem; color: var(--text-muted); }
@@ -179,10 +200,9 @@
         .legacy-list { background: var(--bg-card); padding: 30px; border-radius: 4px; margin: 30px 0; border: 1px solid var(--border-color); }
         .legacy-list strong { color: var(--accent); display: block; font-size: 1.1rem; margin-bottom: 5px; margin-top: 20px; }
         .legacy-list strong:first-child { margin-top: 0; }
-        
-        .legacy-quote { font-size: 1.2rem; font-style: italic; text-align: center; margin: 60px 0 30px 0; color: var(--text-light); }
-        .legacy-quote-author { text-align: center; font-weight: 600; color: var(--accent); text-transform: uppercase; }
 
+        .legacy-content ul { color: #d0d0d0; margin-bottom: 20px; padding-left: 20px; line-height: 1.8; }
+        
         /* --- COMMUNITY BANNER --- */
         .community-banner {
             background: linear-gradient(rgba(163, 93, 59, 0.85), rgba(163, 93, 59, 0.85)), url('forvoxateam.webp') center/cover;
@@ -202,32 +222,15 @@
         .copyright { text-align: center; color: #555; font-size: 0.75rem; padding-top: 20px; border-top: 1px solid var(--border-color); }
 
         /* --- RESPONSIVE FIX (DIJAMIN RAPI & UX JELAS DI HP) --- */
-        .swipe-hint {
-            display: none;
-            font-size: 10px;
-            color: var(--accent);
-            letter-spacing: 1px;
-            font-weight: 600;
-            margin-top: -5px;
-            margin-bottom: 5px;
-            align-self: flex-end;
-            animation: pulseHint 2s infinite;
-        }
-        @keyframes pulseHint {
-            0% { opacity: 0.5; transform: translateX(0); }
-            50% { opacity: 1; transform: translateX(5px); }
-            100% { opacity: 0.5; transform: translateX(0); }
-        }
-
         @media (max-width: 900px) {
             header { 
                 padding: 15px 5%; 
                 flex-direction: column; 
                 gap: 10px; 
-                align-items: flex-start; 
+                align-items: flex-start;
             }
             .swipe-hint {
-                display: block; 
+                display: block;
             }
             nav { 
                 width: 100%;
@@ -236,6 +239,7 @@
                 padding-bottom: 8px;
                 scrollbar-width: thin;
                 scrollbar-color: var(--accent) transparent;
+                -webkit-overflow-scrolling: touch;
             }
             nav::-webkit-scrollbar { display: block; height: 3px; }
             nav::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
@@ -275,13 +279,14 @@
         </nav>
     </header>
 
+    
     <!-- HERO SECTION -->
     <section id="home" class="hero">
         <div class="container">
             <h1>USING CREATIVITY TO SPREAD POSITIVITY AND DO GOOD</h1>
             <p>We transform music, visuals, and storytelling into healing, growth, and meaningful impact for communities.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-filled">Join Now</a>
+                <a href="#contact" class="btn-filled" style="background: transparent; border-color: #fff; color: #fff;">Join Now</a>
                 <a href="#legacy" class="btn-outline" style="border-color: rgba(255,255,255,0.3);">Legacy Experience</a>
             </div>
         </div>
@@ -335,7 +340,7 @@
                         <span style="font-size: 0.85rem; font-style: normal; color: var(--accent);">— Gabriela Pauline</span>
                     </p>
                 </div>
-                                
+                
                 <!-- Team 2 -->
                 <div class="team-member">
                     <img src="hoseahanusia.webp" alt="Hosea Hanusia">
@@ -426,146 +431,227 @@
         <div class="legacy-container">
             <div class="legacy-header">
                 <h2>FORVOXA LEGACY EXPERIENCE™</h2>
-                <h3>Transform Your Life Story Into a Meaningful and Timeless Masterpiece</h3>
+                <h3>Every Story Deserves to Be Crafted by People, Not AI.</h3>
             </div>
             
             <div class="legacy-content">
-                <p>Someday, photos might just be kept in an album.</p>
-                <p>Videos might be stored away in a folder.</p>
-                <p>But the stories behind them often slowly fade away.</p>
-                <p>Stories of life-changing decisions. Stories of struggles that few people see. Stories of prayers once whispered.</p>
-                <p>Of failures that taught resilience. Of love that isn't always spoken. Of life lessons you hope your loved ones will one day understand.</p>
-                <p>At Forvoxa, we believe that every life holds a precious story. Not because someone's life is perfect. But because every journey holds meaning. And that meaning is worth passing down.</p>
-                <p>Through the Forvoxa Legacy Experience™, we help transform meaningful life experiences into original songs, visual storytelling, deep conversations, and a Legacy Book that will live on with your loved ones, both today and in the future.</p>
-                <p>This is not just a music project. This is a legacy project. A masterpiece born from your life's journey. A way to preserve a story from being lost.</p>
+                <p>In a world where almost anything can be created by AI within minutes, we choose something different.</p>
+                
+                <p><strong style="font-size: 1.2rem;">We choose people.</strong></p>
+                
+                <p>Because we believe a person’s life story is more than information.</p>
+                
+                <p>It is a collection of experiences.<br>
+                Prayers once whispered.<br>
+                Dreams pursued.<br>
+                Love shared.<br>
+                Loss endured.<br>
+                Lessons learned.<br>
+                The moments that shape who we become.</p>
+                
+                <p>Stories like these deserve more than a prompt.</p>
+                
+                <p>They deserve to be heard.<br>
+                Understood.<br>
+                And thoughtfully transformed into something meaningful.</p>
+                
+                <p>That’s why every song, every conversation, every film, and every page of your Legacy Book is crafted by people who take the time to truly know your story.</p>
+                
+                <p>Not generated by AI.<br>
+                But created with you.</p>
+                
+                <p>Because we believe…<br>
+                <strong style="color: var(--text-light);">Every Voice Matters.</strong><br>
+                And every life is worth remembering.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Imagine This</h4>
-                <p>Imagine one day your children listening to a song inspired by your life's journey.</p>
-                <p>Not just hearing the music. But understanding the heart behind it. Understanding what you fought for. What you learned. What you believed in. And what you wanted to leave behind for them.</p>
-                <p>Imagine when they face challenges in life, they can return to listen to your story.</p>
-                <p>Not because you have all the answers. But because you lived a real life. With real challenges. With real fears. With real hope.</p>
-                <p>And perhaps, through that story, they find the strength to keep moving forward.</p>
-                <p>Because sometimes the greatest legacy we leave behind is not what we own. It is what we learned. Who we loved. And how we lived our lives.</p>
+                <h4>Imagine This…</h4>
+                <p>One day, your children open Spotify.</p>
+                <p>They press play.</p>
+                <p>What they hear isn’t just a song.<br>
+                It’s your story.</p>
+                
+                <p>The struggles they may never have witnessed.<br>
+                The prayers you quietly prayed.<br>
+                The values you hoped to pass on.<br>
+                The reasons you kept moving forward when life wasn’t easy.</p>
+                
+                <p>Years from now, perhaps during one of life’s difficult seasons, they return to that song.</p>
+                
+                <p>They read your Legacy Book.<br>
+                They watch your film.<br>
+                They hear your voice through the podcast.</p>
+                
+                <p>And once again, they remember…<br>
+                Who you were.<br>
+                What you stood for.<br>
+                What you believed.</p>
+                
+                <p>Because the greatest legacy we leave behind is rarely what we own.<br>
+                It is the values we pass on.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>More Than Just a Story</h4>
-                <p>The Forvoxa Legacy Experience™ is not just about documenting the past. It’s about discovering the meaning behind your life's journey and transforming it into something that will live on.</p>
-                <p>Everyone has a story. Some are full of joy. Some are full of challenges. Some may have never truly been told to anyone.</p>
-                <p>But often, it is within those very experiences that the most valuable lessons reside. About love. About loss. About forgiveness. About the courage to rise again. About faith when things don't go as expected. About how someone still chooses to walk forward even when the path isn't easy.</p>
-                <p>When these stories are shared, they have the power to strengthen others. To make someone feel less alone. To give hope. To remind us that a meaningful life is not a perfect life. It is a life lived wholeheartedly.</p>
-                <p>Through music, stories, and meaningful conversations, we help transform your life experiences into a masterpiece that will continue to inspire the people you love. Not just as a memory. But as a message. Not just as a story. But as a legacy.</p>
+                <h4>What Is the Forvoxa Legacy Experience™?</h4>
+                <p>The Forvoxa Legacy Experience™ is a premium creative journey that transforms meaningful life stories into lasting works of art.</p>
+                <p>Through original music, visual storytelling, heartfelt conversations, and a Legacy Book, we help preserve not just your memories, but the meaning behind them.</p>
+                <p>This isn’t about telling a perfect story.<br>
+                It’s about honoring a real one.</p>
+                <p>Because every life carries lessons worth passing on.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Who Is This Program For?</h4>
-                <p>The Forvoxa Legacy Experience™ is designed for individuals, couples, parents, families, leaders, business founders, and anyone who has a meaningful story they want to share.</p>
-                <p>You don't have to be a singer. You don't have to have musical experience. You don't need to have an extraordinary story. You just need to have a story that matters to you.</p>
-                <p>Because often, the most touching stories are not about massive achievements. They are stories about real life. About struggles. About love. About family. About hope. About being human.</p>
-                <p>Some clients choose to sing their own songs. Some choose to participate in the creative process. Others choose to share their story and entrust professional singers to perform the song. Whatever the choice, the story remains yours.</p>
+                <h4>Why We Choose People Over AI</h4>
+                <p>AI can generate songs.<br>
+                But it doesn’t know you.</p>
+                
+                <p>It doesn’t understand why one memory still brings tears to your eyes.<br>
+                It doesn’t know how loss shaped your perspective.<br>
+                Or how your greatest struggles became your greatest lessons.</p>
+                
+                <p>That’s why every Forvoxa project begins with a conversation.</p>
+                
+                <p>We listen.<br>
+                We ask.<br>
+                We understand.<br>
+                We discover the meaning behind your story before a single lyric is written.</p>
+                
+                <p>Only then does the creative process begin.</p>
+                
+                <p>Every lyric is written by songwriters.<br>
+                Every melody is composed by musicians.<br>
+                Every arrangement is produced by experienced producers.<br>
+                Every podcast is a genuine conversation.<br>
+                Every creative decision is made by people who truly understand your story.</p>
+                
+                <p>We believe AI has an important place in today’s world.<br>
+                But when someone entrusts us with their life’s story, we choose the human touch.</p>
+                
+                <p>Because human stories deserve human creators.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>What Will You Get?</h4>
+                <h4>Who Is This Experience For?</h4>
+                <p>The Forvoxa Legacy Experience™ is designed for people who want to leave behind something more meaningful than memories alone.</p>
+                
+                <ul>
+                    <li>Parents who want to pass on their values.</li>
+                    <li>Couples who want to preserve their journey together.</li>
+                    <li>Families who want to celebrate generations of stories.</li>
+                    <li>Business founders who want to share the purpose behind what they built.</li>
+                    <li>Leaders, professionals, and individuals who believe their experiences may one day encourage someone else.</li>
+                </ul>
+                
+                <p>You don’t have to be a singer.<br>
+                You don’t need any musical experience.<br>
+                You simply need a story that matters to you.</p>
+                
+                <p>Because the most meaningful stories are rarely the most extraordinary.<br>
+                They are simply the most authentic.</p>
+
+                <div class="legacy-divider">⸻</div>
+
+                <h4>What You’ll Receive</h4>
                 <div class="legacy-list">
                     <strong>Two Original Songs</strong>
-                    <p>Two songs professionally written and produced based on your life experiences, values, message, and personal journey. Each song is created specifically and exclusively for you. No templates. No identical songs. Because no two lives have the same story.</p>
+                    <p>Professionally written and produced exclusively from your personal story, values, and message.</p>
                     
-                    <strong>Collaborative Songwriting Process</strong>
-                    <p>We take the time to listen. To understand. To dig into the moments that mean the most in your life. Together, we will discover the story you want to share and transform it into an authentic musical piece.</p>
+                    <strong>Collaborative Songwriting</strong>
+                    <p>A thoughtful discovery process where we uncover the moments that matter most before transforming them into music.</p>
                     
                     <strong>Professional Music Production</strong>
-                    <p>Arrangement. Recording. Production. Mixing. Mastering. Handled professionally by our creative team.</p>
+                    <p>Arrangement, recording, production, mixing, and mastering by our creative team.</p>
                     
-                    <strong>Music Video Production</strong>
-                    <p>A professional music video that helps bring your story to life in a meaningful visual format.</p>
+                    <strong>Cinematic Music Video</strong>
+                    <p>A visual story that brings your journey to life.</p>
                     
                     <strong>Podcast Feature</strong>
-                    <p>A dedicated podcast session to share the story, meaning, values, and life lessons behind the created song. Because sometimes the story behind a song is just as precious as the song itself.</p>
+                    <p>A meaningful conversation exploring the story behind your songs and the lessons behind your journey.</p>
                     
                     <strong>Legacy Book</strong>
-                    <p>A digital Legacy Book designed to summarize key moments, reflections, values, and life lessons from your journey. This book typically consists of 30–50 pages and serves as a companion to the song and podcast. For clients who wish to expand their story into a full book, advanced development options are available separately.</p>
+                    <p>A beautifully designed 30–50 page digital book capturing your story, reflections, values, and life lessons.<br>
+                    Clients who wish to expand into a full-length memoir may continue through our separate publishing service.</p>
                     
-                    <strong>Global Digital Release</strong>
-                    <p>Your song will be released on various digital platforms such as Spotify, Apple Music, YouTube Music, and other streaming platforms. So that the people you love can access it whenever they need it.</p>
-                    
-                    <strong>A Meaningful Legacy</strong>
-                    <p>A collection of works designed to live on and inspire for years to come.</p>
+                    <strong>Worldwide Music Release</strong>
+                    <p>Your songs will be released on Spotify, Apple Music, YouTube Music, and major streaming platforms around the world.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
-
-                <h4>Created by Humans, Not Algorithms</h4>
-                <p>At Forvoxa, we believe some stories deserve a truly personal touch.</p>
-                <p>Every lyric. Every melody. Every conversation. Every creative decision. Crafted by humans who take the time to understand your story.</p>
-                <p>We do not use artificial intelligence for songwriting, music production, vocals, or video creation as part of our core creative process. Because we believe human stories deserve to be treated humanely. And every story deserves genuine attention.</p>
+                
+                <h4>More Than a Song</h4>
+                <p>At the end of your journey, you’ll receive:</p>
+                <p>
+                    ✓ Two original songs<br>
+                    ✓ A cinematic music video<br>
+                    ✓ A personal podcast<br>
+                    ✓ A Legacy Book<br>
+                    ✓ Worldwide digital music distribution
+                </p>
+                <p>But more importantly…<br>
+                <strong>You’ll leave behind something that can continue speaking long after today.</strong></p>
+                <p>Something your family can listen to.<br>
+                Read.<br>
+                Watch.<br>
+                And revisit for years to come.</p>
+                <p>A legacy that keeps your voice alive.</p>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>The Creative Journey</h4>
+                <h4>The Journey</h4>
                 <div class="legacy-list">
-                    <strong>Stage 1: Getting to Know Your Story</strong>
-                    <p>We listen to your life journey, experiences, values, and the message you want to share.</p>
-                    <strong>Stage 2: Song Creation</strong>
-                    <p>Our team begins developing original songs inspired by your story.</p>
-                    <strong>Stage 3: Production</strong>
-                    <p>The song is recorded, produced, mixed, and mastered professionally.</p>
-                    <strong>Stage 4: Video, Podcast & Legacy Book</strong>
-                    <p>We help present your story through a music video, podcast, and a custom-designed Legacy Book.</p>
-                    <strong>Stage 5: Launch</strong>
-                    <p>Your masterpiece is prepared and released to various digital platforms.</p>
+                    <strong>Step One</strong>
+                    <p>A private story discovery session where we listen, ask questions, and understand your life journey.</p>
+                    <strong>Step Two</strong>
+                    <p>Original songwriting inspired by your story and values.</p>
+                    <strong>Step Three</strong>
+                    <p>Professional music production.</p>
+                    <strong>Step Four</strong>
+                    <p>Production of your music video, podcast, and Legacy Book.</p>
+                    <strong>Step Five</strong>
+                    <p>Launch across global digital platforms.</p>
                 </div>
-
-                <div class="legacy-divider">⸻</div>
-
-                <h4>Project Duration</h4>
-                <p>Every story has a different journey. Most projects take about 3 to 6 months from the initial stage to launch.</p>
-                <p>Meaningful work takes time. Attention. Sincerity. And an unhurried process.</p>
+                <p>Most projects are completed within three to six months.<br>
+                Because meaningful work deserves time, care, and attention.</p>
 
                 <div class="legacy-divider">⸻</div>
 
                 <h4>Investment</h4>
                 <div class="legacy-list">
-                    <p style="margin-bottom: 15px; font-weight: 600;">Forvoxa Legacy Experience™ Includes:</p>
+                    <p style="margin-bottom: 15px; font-weight: 600;">The Forvoxa Legacy Experience™ includes:</p>
                     <p>✓ Two Original Songs<br>
-                    ✓ Collaborative Songwriting Process<br>
+                    ✓ Collaborative Songwriting<br>
                     ✓ Professional Music Production<br>
-                    ✓ Music Video Production<br>
+                    ✓ Cinematic Music Video<br>
                     ✓ Podcast Feature<br>
-                    ✓ Legacy Book (30–50 Pages)<br>
-                    ✓ Global Digital Distribution<br>
-                    ✓ Creative Guidance Throughout the Process</p>
+                    ✓ Legacy Book (30–50 pages)<br>
+                    ✓ Worldwide Digital Distribution<br>
+                    ✓ Creative Guidance Throughout the Journey</p>
                     
-                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investment Starting From Rp98,000,000</p>
-                    <p style="font-size: 0.9rem; margin-top: 15px;">Every project is unique. The investment value may vary depending on production needs, creative concepts, filming locations, and the desired level of customization. To maintain quality and attention to each project, we only accept a limited number of clients each year.</p>
+                    <p style="margin-top: 25px; font-size: 1.2rem; color: var(--accent); font-weight: 700;">Investment starts from IDR 98,000,000</p>
+                    <p style="font-size: 0.9rem; margin-top: 15px;">Every project is tailored to the client’s story, creative vision, production requirements, filming locations, and level of customization.</p>
+                    <p style="font-size: 0.9rem;">To ensure every story receives the care it deserves, we accept only a limited number of projects each year.</p>
                 </div>
 
                 <div class="legacy-divider">⸻</div>
 
-                <h4>Is This For You?</h4>
-                <p>The Forvoxa Legacy Experience™ is not for everyone.</p>
-                <p>This program is intended for those who believe stories have meaning. For those who want to leave behind something meaningful. For those who want to pass down more than just memories. For those who want their values, lessons, experiences, and hopes to live on with the people they love.</p>
-                <p>If that is you, we would be honored to help bring your story to life into a masterpiece.</p>
-
-                <div class="legacy-divider">⸻</div>
-
-                <h4>Why We Do It</h4>
-                <p>Forvoxa was born from a simple belief. That every voice matters. Every story matters. And every life has meaning.</p>
-                <p>We believe stories have the power to inspire. To strengthen. To connect. And to leave a lasting impact.</p>
-                <p>Sometimes one story can make someone feel less alone. Sometimes one life lesson can give hope. Sometimes one song can convey something that is hard to express with ordinary words.</p>
-                <p>That is why we do what we do. Because there are stories worth keeping. Stories worth sharing. And stories worth becoming a legacy.</p>
-
-                <div class="legacy-quote">
-                    “Some of the most meaningful lessons in life are often found through the stories we share.”
-                </div>
-                <div class="legacy-quote-author">
-                    Gabriela Pauline<br>
-                    <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Founder, Forvoxa</span>
-                </div>
+                <h4>Why We Do This</h4>
+                <p>Forvoxa was founded on one simple belief.</p>
+                <p>Every voice matters.<br>
+                Every story matters.<br>
+                Every life has meaning.</p>
+                <p>We believe music can preserve memories.<br>
+                Stories can inspire generations.<br>
+                And one honest conversation can change someone’s life.</p>
+                <p>That’s why we don’t simply produce songs.<br>
+                We help people preserve what matters most.</p>
                 
-                <p style="text-align: center; font-weight: 600; margin-top: 40px; color: var(--text-light);">Your Story. Your Song. Your Legacy.<br><span class="text-accent">Because Your Voice Matters.</span></p>
+                <p style="text-align: center; font-weight: 600; margin-top: 60px; color: var(--text-light); font-size: 1.3rem; line-height: 1.8;">
+                    Your Story.<br>
+                    Your Song.<br>
+                    Your Legacy.<br>
+                    <span class="text-accent">Because Your Voice Matters.</span>
+                </p>
                 
             </div>
         </div>
