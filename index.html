@@ -30,22 +30,21 @@
             scroll-behavior: smooth;
         }
 
-        /* --- HEADER & NAVIGATION (FIXED FOR MOBILE) --- */
-/* --- HEADER & NAVIGATION (FREEZE PANEL / FIXED) --- */
+        /* --- HEADER & NAVIGATION (FREEZE PANEL / FIXED) --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 5%;
             background: rgba(12, 12, 12, 0.98);
-            position: fixed; /* Mengunci menu agar selalu ikut di-scroll */
+            position: fixed; 
             top: 0;
             left: 0;
-            width: 100%; /* Memastikan lebarnya penuh dari kiri ke kanan */
-            z-index: 1000; /* Memastikan menu selalu berada di tumpukan paling atas */
+            width: 100%; 
+            z-index: 1000; 
             border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px); /* Efek kaca buram transparan yang elegan */
-            box-sizing: border-box; /* Mencegah menu meluber ke samping */
+            backdrop-filter: blur(10px); 
+            box-sizing: border-box; 
         }
         .logo img { height: 35px; }
 
@@ -59,21 +58,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
-            white-space: nowrap; /* Mencegah teks menu patah ke bawah */
+            white-space: nowrap; 
         }
 
         nav a:hover, nav a.active { color: var(--text-light); }
-
-        .btn-ai {
-            background: var(--accent);
-            color: #fff !important;
-            padding: 10px 18px;
-            border-radius: 3px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-ai:hover { background: #8e4e30; }
 
         .lang-switch {
             border-left: 1px solid rgba(255,255,255,0.2);
@@ -103,6 +91,22 @@
             transition: all 0.3s;
         }
         .btn-outline:hover { background: var(--text-light); color: var(--bg-main); }
+        
+        .btn-filled {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .btn-filled:hover { background: #fff; color: var(--bg-main); }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -133,9 +137,9 @@
         /* --- TEAM SECTION --- */
         .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 50px; }
         .team-member { background: var(--bg-card); padding: 30px; border-radius: 4px; border: 1px solid var(--border-color); }
-.team-member img { 
+        .team-member img { 
             width: 100%; 
-            height: auto; /* Membiarkan tinggi foto menyesuaikan ukuran aslinya */
+            height: auto; 
             border-radius: 4px; 
             margin-bottom: 20px; 
             filter: grayscale(20%); 
@@ -197,8 +201,7 @@
         .footer-links a:hover { color: var(--text-light); }
         .copyright { text-align: center; color: #555; font-size: 0.75rem; padding-top: 20px; border-top: 1px solid var(--border-color); }
 
-        /* --- RESPONSIVE FIX (DIJAMIN RAPI DI HP) --- */
-/* --- ANIMASI & HINT SWIPE MENU --- */
+        /* --- RESPONSIVE FIX (DIJAMIN RAPI & UX JELAS DI HP) --- */
         .swipe-hint {
             display: none;
             font-size: 10px;
@@ -216,27 +219,24 @@
             100% { opacity: 0.5; transform: translateX(0); }
         }
 
-        /* --- RESPONSIVE FIX (DIJAMIN RAPI & UX JELAS DI HP) --- */
         @media (max-width: 900px) {
             header { 
                 padding: 15px 5%; 
                 flex-direction: column; 
                 gap: 10px; 
-                align-items: flex-start; /* Rata kiri agar terlihat seperti list panjang */
+                align-items: flex-start; 
             }
             .swipe-hint {
-                display: block; /* Memunculkan tulisan "Swipe" di HP */
+                display: block; 
             }
             nav { 
                 width: 100%;
                 overflow-x: auto; 
                 justify-content: flex-start;
                 padding-bottom: 8px;
-                /* Memunculkan scrollbar tipis di Firefox */
                 scrollbar-width: thin;
                 scrollbar-color: var(--accent) transparent;
             }
-            /* Styling scrollbar elegan untuk Chrome/Safari */
             nav::-webkit-scrollbar { display: block; height: 3px; }
             nav::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
             nav::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
@@ -246,12 +246,11 @@
             .focus-box { padding: 30px; }
             .legacy-header h2 { font-size: 2rem; }
         }
-        
-        </style>
+    </style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION (ENGLISH) -->
+    <!-- HEADER / NAVIGATION (ENGLISH) -->
     <header>
         <a href="#" class="logo">
             <img src="https://forvoxa.com/wp-content/uploads/2025/08/Logo-Forvoxa-White-1024x312.webp" alt="Forvoxa Logo">
@@ -282,7 +281,7 @@
             <h1>USING CREATIVITY TO SPREAD POSITIVITY AND DO GOOD</h1>
             <p>We transform music, visuals, and storytelling into healing, growth, and meaningful impact for communities.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-filled" style="background: transparent; border-color: #fff; color: #fff;">Join Now</a>
+                <a href="#contact" class="btn-filled">Join Now</a>
                 <a href="#legacy" class="btn-outline" style="border-color: rgba(255,255,255,0.3);">Legacy Experience</a>
             </div>
         </div>
@@ -293,13 +292,11 @@
         <div class="container about-grid">
             <div class="about-left">
                 <h2>ABOUT <br><span class="text-accent">FORVOXA</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">...</p>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem;">...</p>
-                <!-- Foto Kak Gabriela sedang rekaman -->
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">Forvoxa is a creative movement dedicated to healing, growth, and giving back. We combine music, creative visuals, and community engagement to inspire change and bring people together.</p>
+                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 0.95rem;">Our projects are designed to touch hearts, start conversations, and spark action. We believe creativity is not just for entertainment. It is a powerful tool to create hope and transform lives.</p>
                 <img src="forvoxa2.webp" alt="About Image 1">
             </div>
             <div class="about-right">
-                <!-- Foto Grup Tim Forvoxa -->
                 <img src="forvoxateam.webp" alt="About Image 2">
                 
                 <div class="mission-row">
@@ -322,7 +319,7 @@
             <p style="color: var(--text-muted);">The people behind the stories, music, and impact.</p>
             
             <div class="team-grid">
-<!-- Team 1 -->
+                <!-- Team 1 -->
                 <div class="team-member">
                     <img src="gabrielapauline.webp" alt="Gabriela Pauline">
                     <h4>Gabriela Pauline</h4>
@@ -401,9 +398,24 @@
                     <h2>LATEST<br><span class="text-accent">FOCUS</span></h2>
                 </div>
                 <div class="focus-right">
-                    <p><strong>August and September Theme: ‘Kasih Bapa’ (Father's Love).</strong></p>
-                    <p>Forvoxa’s current focus is raising awareness about the importance of a father figure. Through community stories, music projects, and creative visuals, we aim to spark meaningful conversations and inspire change.</p>
-                    <p>Every month, we feature a theme that guides our creative work and invites people to share their voices.</p>
+                    <h3 style="color: var(--text-light); margin-bottom: 5px; text-transform: none; font-size: 2rem;">Miliki Makna</h3>
+                    <p style="font-size: 1.05rem; color: var(--accent); font-weight: 500; margin-bottom: 25px;">A meaningful song created to remind the world that every life has meaning.</p>
+
+                    <p>Our latest focus is <strong>“Miliki Makna,”</strong> an original song produced by Forvoxa in collaboration with <strong>Yayasan Elsafan</strong>, a foundation and community for people with visual impairments.</p>
+
+                    <p>This project reflects one of Forvoxa’s deepest beliefs: that every person has inherent worth, purpose, and a story that deserves to be heard. Through music, we hope to encourage not only people with visual impairments, but also anyone who has ever questioned their value or purpose.</p>
+
+                    <p>Since its release on digital music platforms, Miliki Makna has touched many lives by carrying a simple yet powerful message:<br>
+                    <span style="color: var(--text-light); font-weight: 600; font-size: 1.1rem;">Your life has meaning.</span></p>
+
+                    <p>This project is part of Forvoxa’s ongoing commitment to creating meaningful music and authentic stories that inspire hope, celebrate human dignity, and make a positive impact in our communities.</p>
+
+                    <p style="font-weight: 600; color: var(--text-light); margin-top: 20px;">Because every voice matters.<br>Because every life has meaning.</p>
+
+                    <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <p style="margin-bottom: 5px;"><strong style="color: var(--accent);">Listen to “Miliki Makna” by Elsafan.</strong></p>
+                        <p style="font-size: 0.85rem; margin: 0;">Available now on Spotify, Apple Music, YouTube Music, YouTube, and other major digital music platforms.</p>
+                    </div>
                 </div>
             </div>
         </div>
